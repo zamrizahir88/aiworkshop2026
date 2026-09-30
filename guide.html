@@ -1,0 +1,290 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23f2a900'/><text x='16' y='22' font-family='monospace' font-weight='700' font-size='15' text-anchor='middle' fill='%230f2742'>AI</text></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Hands-on guide | AI-Assisted Web System Development 2026</title></head><body>
+<header class="topbar"><div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark">AI</span><span><span class="full">AI-Assisted Web System Development </span>2026</span></a>
+<nav class="nav" aria-label="Main">
+<a href="index.html">Home</a>
+<a href="slides.html">Slides</a>
+<a href="guide.html" aria-current="page">Hands-on guide</a>
+<a href="help.html">Help</a>
+</nav></div></header>
+<main>
+<section class="pagehead blueprint"><div class="wrap">
+ <h1>Hands-on guide</h1>
+ <p>Build the FKTEN eBooking Room System in 12 steps. Tick each step as you finish: your progress is saved in this browser.</p>
+</div></section>
+<div class="wrap guide-layout">
+ <aside class="side" aria-label="Steps">
+  <h2>Your progress</h2>
+  <div class="progress"><i id="pbar"></i></div><p class="progress-txt" id="ptxt">0 of 12 steps done</p>
+  <ol class="steplist" id="steplist">
+   <li><a href="#step-1"><span class="n">1</span>Design the system</a></li>
+   <li><a href="#step-2"><span class="n">2</span>Column headers</a></li>
+   <li><a href="#step-3"><span class="n">3</span>Set up the Sheet</a></li>
+   <li><a href="#step-4"><span class="n">4</span>Generate the code</a></li>
+   <li><a href="#step-5"><span class="n">5</span>Apps Script</a></li>
+   <li><a href="#step-6"><span class="n">6</span>Deploy</a></li>
+   <li><a href="#step-7"><span class="n">7</span>Authorise</a></li>
+   <li><a href="#step-8"><span class="n">8</span>Test a booking</a></li>
+   <li><a href="#step-9"><span class="n">9</span>Add roles</a></li>
+   <li><a href="#step-10"><span class="n">10</span>Redeploy</a></li>
+   <li><a href="#step-11"><span class="n">11</span>Approve a booking</a></li>
+   <li><a href="#step-12"><span class="n">12</span>Challenges</a></li>
+  </ol>
+  <button class="reset" id="reset">Clear my progress</button>
+ </aside>
+ <div>
+  <div class="note note-info" style="margin-top:0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v.5M12 11v5"/></svg><p><strong>Before you start:</strong> sign in with your UniMAP Google account only. If your browser has several Google accounts signed in, use a separate browser profile or an incognito window to avoid permission errors later.</p></div>
+<section class="step" id="step-1" data-step="1">
+ <div class="step-top"><span class="step-num">1</span><div style="flex:1"><h2>Ask Gemini to design the system</h2><span class="where gemini">In Gemini</span></div><div class="minimap"><span class="on ai">AI</span><span>Frontend</span><span>Backend</span><span>Database</span></div></div>
+ <p>Open <a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a> in a new tab, signed in with your UniMAP account. Start a new chat and choose Gemini 3.1 Pro if the model picker is shown. <strong>Use this same chat for Prompts 1 to 4</strong>, so Gemini remembers the earlier answers.</p>
+ <div class="prompt-wrap"><div class="prompt-label">Prompt 1</div>
+<div class="prompt" id="p1"><button class="copy" data-copy="p1">Copy prompt</button>Act as a Senior Web Systems Analyst. I want to build a simple Online Room Reservation System for the Faculty of Engineering Tech (FKTEN) using Google Apps Script and Google Sheets.
+
+Our lecturers need to book specific shared rooms. The system must strictly limit the booking options to only the following 6 official rooms:
+
+Bilik Viva-Voce (FKTEN 1 – Blok 11, Aras Bawah) - Capacity: 7
+Bilik Mesyuarat Utama (FKTEN 1 – Blok 11, Aras 1) - Capacity: 35
+Bilik Diskusi (FKTEN 1 – Blok 11, Aras 1) - Capacity: 10
+Dewan Serbaguna (FKTEN 1 – Blok 9, Aras 1) - Capacity: 100
+Bilik Tutorial (FKTEN 1 – Blok 5, Aras 2) - Capacity: 50
+Dewan Seminar (FKTEN 1 – Blok 5, Aras 2) - Capacity: 50
+
+Based on these constraints, please suggest:
+- 5 essential features for a simple, user-friendly web app.
+- What exact data fields we should store in Google Sheets to capture the booking and room details.
+- A logical workflow for how to handle the booking status (e.g., Pending, Approved) between the user and admin.
+
+Keep your suggestions simple, practical, and non-technical. Do not write the code yet; just outline the system design.</div></div>
+ <div class="note note-tip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg><p><strong>Read the answer.</strong> This is your system design. If something doesn't fit how FKTEN works, tell Gemini now, before any code exists. Changes are cheapest at this stage.</p></div>
+ <div class="done-row"><label class="check"><input type="checkbox"> I've sent Prompt 1 and read the design</label><a class="next-link" href="#step-2">Next: column headers</a></div>
+</section>
+
+<section class="step" id="step-2" data-step="2">
+ <div class="step-top"><span class="step-num">2</span><div style="flex:1"><h2>Get the exact column headers</h2><span class="where gemini">In Gemini, same chat</span></div><div class="minimap"><span class="on ai">AI</span><span>Frontend</span><span>Backend</span><span class="on db">Database</span></div></div>
+ <div class="prompt-wrap"><div class="prompt-label">Prompt 2</div>
+<div class="prompt" id="p2"><button class="copy" data-copy="p2">Copy prompt</button>Based on your suggestions, give me the exact Column Headers (Row 1) for my Google Sheet database for FKTEN room bookings.</div></div>
+ <p>Gemini will reply with a list of headers. In the demo system, they were these 11 columns:</p>
+ <div class="diagram"><div class="diagram-h"><span>Row 1 of the demo Sheet</span><button class="btn btn-line btn-s" data-copy="hdrs-tsv">Copy these headers</button></div>
+  <div class="sheetgrid"><table><thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th></tr></thead><tbody data-hdr-anim><tr class="h"><td class="rn">1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td class="rn">2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+  <span id="hdrs-tsv" hidden data-text="Timestamp&#9;Lecturer Name&#9;Staff Email&#9;Room Requested&#9;Date of Event&#9;Start Time&#9;End Time&#9;Expected Attendees&#9;Purpose of Booking&#9;Booking Status&#9;Admin Remarks"></span>
+ </div>
+ <div class="note note-info"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v.5M12 11v5"/></svg><p>Your headers may differ slightly. That's fine: <strong>use the headers Gemini gave you</strong>, because Prompt 3 builds the code around them. The copy button above is a shortcut if yours match the demo.</p></div>
+ <div class="done-row"><label class="check"><input type="checkbox"> I have my column headers</label><a class="next-link" href="#step-3">Next: set up the Sheet</a></div>
+</section>
+
+<section class="step" id="step-3" data-step="3">
+ <div class="step-top"><span class="step-num">3</span><div style="flex:1"><h2>Set up your Google Sheet</h2><span class="where sheets">In Google Sheets</span></div><div class="minimap"><span>AI</span><span>Frontend</span><span>Backend</span><span class="on db">Database</span></div></div>
+ <ol class="do">
+  <li>Open a new tab and type <code>sheets.new</code> in the address bar. A blank Google Sheet opens in your Drive.</li>
+  <li>Click <strong>Untitled spreadsheet</strong> at the top left and rename it <strong>eBooking Room System</strong>.</li>
+  <li>Click cell <strong>A1</strong> and paste the headers from Step 2. If you copy them with the button, they spread across A1 to K1 automatically.</li>
+  <li>Check the tab name at the bottom of the Sheet (usually <strong>Sheet1</strong>). You'll need it in Step 5.</li>
+ </ol>
+ <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/sheet-headers.png" alt="Google Sheet named eBooking Room System with 11 headers in row 1" loading="lazy"></button><figcaption>Your Sheet should look like this: one header per column in row 1, nothing else yet.</figcaption></figure>
+ <div class="done-row"><label class="check"><input type="checkbox"> My Sheet has headers in row 1</label><a class="next-link" href="#step-4">Next: generate the code</a></div>
+</section>
+
+<section class="step" id="step-4" data-step="4">
+ <div class="step-top"><span class="step-num">4</span><div style="flex:1"><h2>Ask Gemini to write the code</h2><span class="where gemini">In Gemini, same chat</span></div><div class="minimap"><span class="on ai">AI</span><span class="on fe">Frontend</span><span class="on be">Backend</span><span>Database</span></div></div>
+ <div class="prompt-wrap"><div class="prompt-label">Prompt 3</div>
+<div class="prompt" id="p3"><button class="copy" data-copy="p3">Copy prompt</button>Now write the complete code for the FKTEN Room Reservation System using Google Apps Script.
+
+Requirements:
+1. Google Sheet structure: Columns are followed as given previously (Timestamp, Lecturer Name, Staff Email, Room Requested, Date of Event, Start Time, End Time, Expected Attendees, Purpose of Booking, Booking Status, Admin Remarks).
+2. Backend (Code.gs): Functions to serve the web app (doGet), append new booking form submissions to the sheet, and fetch existing bookings to display.
+3. Frontend (Index.html):
+   - A clean booking form with inputs matching the fields.
+   - A table below the form displaying all current bookings.
+   - Use Bootstrap 5 CSS via CDN for a modern, responsive look.
+
+STRICT CONSTRAINTS:
+- Output ONLY 2 code blocks: Code.gs and Index.html.
+- Put all CSS styles in &lt;style&gt; tags and JavaScript logic in &lt;script&gt; tags inside Index.html. Do not create separate HTML or JS files.
+- Include comments explaining where to insert the Google Sheet ID.</div></div>
+ <div class="note note-info"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v.5M12 11v5"/></svg><p>If your headers from Step 2 are different, edit the list in brackets before sending. You should get back <strong>exactly two code blocks</strong>. Each has a copy button at its top right in Gemini.</p></div>
+ <div class="done-row"><label class="check"><input type="checkbox"> I have Code.gs and Index.html from Gemini</label><a class="next-link" href="#step-5">Next: Apps Script</a></div>
+</section>
+
+<section class="step" id="step-5" data-step="5">
+ <div class="step-top"><span class="step-num">5</span><div style="flex:1"><h2>Put the code into Apps Script</h2><span class="where script">In Apps Script</span></div><div class="minimap"><span>AI</span><span class="on fe">Frontend</span><span class="on be">Backend</span><span>Database</span></div></div>
+ <p>In your Sheet, click <strong>Extensions › Apps Script</strong>. The editor opens in a new tab.</p>
+ <div class="shots">
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/menu-apps-script.png" alt="Extensions menu with Apps Script highlighted" loading="lazy"></button><figcaption>Extensions › Apps Script</figcaption></figure>
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/editor-default.png" alt="Apps Script editor with the default myFunction code" loading="lazy"></button><figcaption>The editor opens with a default Code.gs</figcaption></figure>
+ </div>
+ <div class="diagram"><div class="diagram-h"><span>Watch it, then do it</span><button class="btn btn-line btn-s" data-ed-replay>Replay</button></div>
+  <div class="clickpath" data-edsteps style="margin-bottom:14px"><span class="cp">Delete the default code</span><span class="arr">›</span><span class="cp">Paste Code.gs</span><span class="arr">›</span><span class="cp">Set Sheet ID and name</span><span class="arr">›</span><span class="cp">+ › HTML, name it Index</span><span class="arr">›</span><span class="cp">Paste Index.html, save</span></div>
+  <div class="editor"><div class="files" data-edfiles><div class="sel">&#128196; Code.gs</div></div><div class="code" data-edcode></div></div>
+ </div>
+ <ol class="do">
+  <li>In <strong>Code.gs</strong>, select all (<kbd>Ctrl</kbd>+<kbd>A</kbd>), delete, and paste the Code.gs from Gemini.</li>
+  <li>Find the line with the Sheet ID and replace the placeholder with your own ID. Use the helper below.</li>
+  <li>If there's a sheet name line, make sure it matches your tab name exactly (for example <code>Sheet1</code>).</li>
+  <li>Click the <strong>+</strong> next to Files, choose <strong>HTML</strong>, and name it <strong>Index</strong>. Don't type ".html": it's added automatically.</li>
+  <li>Delete the default content of Index.html, paste Gemini's Index.html, and save (<kbd>Ctrl</kbd>+<kbd>S</kbd>).</li>
+ </ol>
+ <div class="diagram"><div class="diagram-h"><span>Sheet ID helper</span></div>
+  <div class="idtool">
+   <p style="margin:0;font-size:15px">Your Sheet ID is the part of your Sheet's link between <code>/d/</code> and <code>/edit</code>:</p>
+   <div class="url-anatomy">https://docs.google.com/spreadsheets/d/<b>1AbC...xYz</b>/edit#gid=0</div>
+   <label for="sheeturl" style="font-weight:600;font-size:15px">Paste your Google Sheet link</label>
+   <input id="sheeturl" type="url" placeholder="https://docs.google.com/spreadsheets/d/.../edit" autocomplete="off">
+   <label for="sheetname" style="font-weight:600;font-size:15px">Your tab name (bottom of the Sheet)</label>
+   <input id="sheetname" type="text" value="Sheet1" autocomplete="off">
+   <div class="out"><span id="idline">const SHEET_ID = '<b>paste your link above</b>';<br>const SHEET_NAME = '<b>Sheet1</b>';</span><button class="copy" data-copy="idline">Copy</button></div>
+   <p class="msg" id="idmsg" style="color:var(--muted)">Your AI-generated code may name these differently. Only replace the values inside the quotes.</p>
+  </div>
+ </div>
+ <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/add-html-file.png" alt="The plus menu next to Files, showing Script and HTML" loading="lazy"></button><figcaption>Files › + › HTML, then name it Index</figcaption></figure>
+ <div class="done-row"><label class="check"><input type="checkbox"> Both files are pasted and saved</label><a class="next-link" href="#step-6">Next: deploy</a></div>
+</section>
+
+<section class="step" id="step-6" data-step="6">
+ <div class="step-top"><span class="step-num">6</span><div style="flex:1"><h2>Deploy it as a web app</h2><span class="where script">In Apps Script</span></div><div class="minimap"><span>AI</span><span class="on fe">Frontend</span><span class="on be">Backend</span><span class="on db">Database</span></div></div>
+ <div class="diagram"><div class="diagram-h"><span>The click path</span><button class="btn btn-line btn-s" data-cp-replay="cp6">Replay</button></div>
+  <div class="clickpath" id="cp6"><span class="cp">Deploy</span><span class="arr">›</span><span class="cp">New deployment</span><span class="arr">›</span><span class="cp">&#9881; Select type</span><span class="arr">›</span><span class="cp">Web app</span><span class="arr">›</span><span class="cp">Fill in settings</span><span class="arr">›</span><span class="cp">Deploy</span></div>
+  <dl class="cp-setting"><dt>Description</dt><dd>eBooking v1.0 (anything you like)</dd><dt>Execute as</dt><dd>Me (your UniMAP account)</dd><dt>Who has access</dt><dd class="hl">Anyone within Universiti Malaysia Perlis</dd></dl>
+ </div>
+ <div class="note note-info"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v.5M12 11v5"/></svg><p>UniMAP's Google Workspace doesn't allow fully public web apps, so choose <strong>Anyone within Universiti Malaysia Perlis</strong>. Colleagues open the app with their UniMAP account.</p></div>
+ <div class="shots">
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/deploy-new.png" alt="Deploy menu with New deployment" loading="lazy"></button><figcaption>Deploy › New deployment</figcaption></figure>
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/deploy-type-webapp.png" alt="Select type menu with Web app" loading="lazy"></button><figcaption>Gear icon › Web app</figcaption></figure>
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/deploy-settings.png" alt="Deployment settings: description, execute as me, access within Universiti Malaysia Perlis" loading="lazy"></button><figcaption>The settings, then Deploy</figcaption></figure>
+ </div>
+ <div class="done-row"><label class="check"><input type="checkbox"> I clicked Deploy</label><a class="next-link" href="#step-7">Next: authorise</a></div>
+</section>
+
+<section class="step" id="step-7" data-step="7">
+ <div class="step-top"><span class="step-num">7</span><div style="flex:1"><h2>Authorise and get your link</h2><span class="where browser">Google permission screens</span></div><div class="minimap"><span>AI</span><span>Frontend</span><span class="on be">Backend</span><span class="on db">Database</span></div></div>
+ <p>The first time, Google asks you to let your script use your Sheet. This is normal for any script you write.</p>
+ <div class="diagram"><div class="diagram-h"><span>What you'll see</span><button class="btn btn-line btn-s" data-cp-replay="cp7">Replay</button></div>
+  <div class="clickpath" id="cp7"><span class="cp">Authorise access</span><span class="arr">›</span><span class="cp">Pick your UniMAP account</span><span class="arr">›</span><span class="cp">Continue / Allow</span><span class="arr">›</span><span class="cp">Copy the Web app URL</span><span class="arr">›</span><span class="cp">Open it, review permissions</span></div>
+ </div>
+ <div class="shots">
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/authorise-access.png" alt="The web app requires you to authorise access" loading="lazy"></button><figcaption>1. Authorise access</figcaption></figure>
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/google-allow.png" alt="eBooking Room System wants access to your Google Account" loading="lazy"></button><figcaption>2. Continue to allow access to your Sheets</figcaption></figure>
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/deploy-success-url.png" alt="Deployment successfully updated, with the web app URL" loading="lazy"></button><figcaption>3. Copy the Web app URL (ends in /exec)</figcaption></figure>
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/review-permissions.png" alt="eBooking Room System (Unverified) with Review permissions button" loading="lazy"></button><figcaption>4. Opening the link: Review permissions</figcaption></figure>
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/google-allow-2.png" alt="Access request screen with Continue button" loading="lazy"></button><figcaption>5. Continue</figcaption></figure>
+ </div>
+ <div class="note note-tip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></svg><p><strong>"Unverified" or "Google hasn't verified this app"?</strong> It's your own script, so that's expected. If a warning page appears, click <strong>Advanced</strong>, then <strong>Go to eBooking Room System (unsafe)</strong>. Only do this for code you created yourself.</p></div>
+ <div class="done-row"><label class="check"><input type="checkbox"> I have my Web app URL</label><a class="next-link" href="#step-8">Next: test it</a></div>
+</section>
+
+<section class="step" id="step-8" data-step="8">
+ <div class="step-top"><span class="step-num">8</span><div style="flex:1"><h2>Test your first booking</h2><span class="where browser">In your web app</span></div><div class="minimap"><span>AI</span><span class="on fe">Frontend</span><span class="on be">Backend</span><span class="on db">Database</span></div></div>
+ <ol class="do">
+  <li>Open your Web app URL. The booking form appears.</li>
+  <li>Fill it in with a dummy booking and click <strong>Submit Reservation</strong>.</li>
+  <li>You should see a success message, and the booking appears in the table as <strong>Pending</strong>.</li>
+  <li>Switch to your Google Sheet tab: <strong>there's your booking, as a new row.</strong></li>
+ </ol>
+ <div class="shots">
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/app-first-load.png" alt="The FKTEN Room Reservation System form, freshly loaded" loading="lazy"></button><figcaption>Your live web system</figcaption></figure>
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/app-submitted.png" alt="Booking request submitted successfully, now Pending admin approval" loading="lazy"></button><figcaption>Submit: a success message</figcaption></figure>
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/app-pending-row.png" alt="Recent booking requests table showing one Pending booking" loading="lazy"></button><figcaption>The booking appears as Pending</figcaption></figure>
+ </div>
+ <div class="note note-ok"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6"/></svg><p>Something wrong? Check the <a href="help.html#errors">common errors</a> first. The most frequent cause is a Sheet ID or tab name that doesn't match.</p></div>
+ <div class="done-row"><label class="check"><input type="checkbox" data-celebrate> My booking appeared in the Sheet!</label><a class="next-link" href="#step-9">Next: add roles</a></div>
+</section>
+
+<section class="step" id="step-9" data-step="9">
+ <div class="step-top"><span class="step-num">9</span><div style="flex:1"><h2>Upgrade: add admin and user roles</h2><span class="where gemini">In Gemini, same chat</span></div><div class="minimap"><span class="on ai">AI</span><span class="on fe">Frontend</span><span class="on be">Backend</span><span class="on db">Database</span></div></div>
+ <p>Now admins can approve or reject bookings, and normal users only book and view the schedule.</p>
+ <div class="diagram"><div class="diagram-h"><span>What each role will see</span></div>
+  <div class="roles">
+   <div class="role admin"><h4>&#128081; Admin (you)</h4><div class="tabs"><span class="a">Book a Room</span><span class="a">Admin Dashboard</span></div><ul><li>Views all bookings</li><li>Approves or rejects, with remarks</li><li>Can also book rooms</li></ul></div>
+   <div class="role"><h4>&#128100; User (other UniMAP staff)</h4><div class="tabs"><span class="a" style="border-color:var(--line);color:var(--text)">Book a Room</span><span class="x">Admin Dashboard</span></div><ul><li>Views the public schedule</li><li>Submits booking requests</li><li>Never receives the admin page code</li></ul></div>
+  </div>
+ </div>
+ <label for="myemail" style="font-weight:600;display:block;margin-top:18px">Your UniMAP email (it goes into the prompt as the first admin)</label>
+ <input id="myemail" type="email" placeholder="yourname@unimap.edu.my" autocomplete="email" style="font:16px var(--mono);padding:12px 14px;border:2px solid var(--line);border-radius:9px;width:100%;max-width:440px;margin-top:6px">
+ <div class="prompt-wrap"><div class="prompt-label">Prompt 4</div>
+<div class="prompt" id="p4"><button class="copy" data-copy="p4">Copy prompt</button>We are upgrading a Google Apps Script Room Reservation System to include role-based access.
+
+I need two roles for this system:
+- Admins: Me (my Google account: <mark data-email>yourname@unimap.edu.my</mark>) and anyone else whose email I authorize.
+- Users: Other UniMAP Gmail accounts.
+
+Admin roles:
+- Can view all bookings made.
+- Can approve/reject bookings with optional remarks.
+
+User roles:
+- Can view the public schedule of bookings made by others.
+- Can submit a new booking request.
+
+Note: Admins also need to make bookings. Provide a clean UI switch (like tabs) for Admins to easily toggle between a "Booking View" (acting as a normal user) and an "Admin Dashboard".
+
+CRITICAL SECURITY &amp; TECHNICAL CONSTRAINTS (MUST FOLLOW):
+- Workspace Deployment Rules: The app will be deployed using Execute as: Me (Developer) and Who has access: Anyone within unimap.edu.my (to bypass Google Drive file-sharing errors). You must capture user identities securely using Session.getActiveUser().getEmail().
+- Strict Admin Validation (Backend): When cross-referencing the logged-in email with the Admin list in Google Sheets, you MUST implement strict validation. Explicitly reject null, undefined, or blank emails, and ignore empty rows in the sheet to prevent blank === blank false-positive admin access.
+- Server-Side Rendering (Frontend UI): Do NOT rely on CSS or JavaScript (e.g., display: none) to hide the Admin Dashboard from normal users. You MUST use Google Apps Script server-side scriptlets (e.g., &lt;? if (isAdmin) { ?&gt; ... &lt;? } ?&gt;) so the admin HTML and UI tabs are never physically sent to a non-admin's browser.
+
+Tell me if I need to make any modifications to the current Google Sheet database to support this.
+
+Update the .gs and .html files accordingly. Don't provide patches; output the fully updated code directly.</div></div>
+ <ol class="do">
+  <li>Do any Sheet changes Gemini asks for first, such as adding an <strong>Admins</strong> tab with your email in it.</li>
+  <li>Replace <strong>all</strong> of Code.gs and Index.html with the new versions (<kbd>Ctrl</kbd>+<kbd>A</kbd>, delete, paste), then save.</li>
+ </ol>
+ <div class="done-row"><label class="check"><input type="checkbox"> New code pasted and saved</label><a class="next-link" href="#step-10">Next: redeploy</a></div>
+</section>
+
+<section class="step" id="step-10" data-step="10">
+ <div class="step-top"><span class="step-num">10</span><div style="flex:1"><h2>Redeploy as a new version</h2><span class="where script">In Apps Script</span></div><div class="minimap"><span>AI</span><span class="on fe">Frontend</span><span class="on be">Backend</span><span>Database</span></div></div>
+ <p><strong>Saving doesn't update your live app.</strong> You must publish a new version. The link stays the same.</p>
+ <div class="diagram"><div class="diagram-h"><span>The click path</span><button class="btn btn-line btn-s" data-cp-replay="cp10">Replay</button></div>
+  <div class="clickpath" id="cp10"><span class="cp">Deploy</span><span class="arr">›</span><span class="cp">Manage deployments</span><span class="arr">›</span><span class="cp">&#9998; Edit (pencil)</span><span class="arr">›</span><span class="cp">Version: New version</span><span class="arr">›</span><span class="cp">Description: eBooking v1.1</span><span class="arr">›</span><span class="cp">Deploy</span></div>
+  <div style="margin-top:20px"><div class="vt" id="vt"><span class="v">v1.0</span><span class="ln"></span><span class="v">v1.1</span></div><p class="vt-url">Same Web app URL. Colleagues just refresh the page.</p></div>
+ </div>
+ <div class="shots">
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/deploy-manage.png" alt="Deploy menu with Manage deployments" loading="lazy"></button><figcaption>Deploy › Manage deployments</figcaption></figure>
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/manage-edit-pencil.png" alt="Manage deployments with the Edit pencil icon" loading="lazy"></button><figcaption>Click the pencil to edit</figcaption></figure>
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/manage-new-version.png" alt="Version dropdown with New version" loading="lazy"></button><figcaption>Version › New version</figcaption></figure>
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/manage-deploy-v11.png" alt="New version with description eBooking v1.1 and Deploy button" loading="lazy"></button><figcaption>Describe it, then Deploy</figcaption></figure>
+ </div>
+ <div class="done-row"><label class="check"><input type="checkbox"> I deployed a new version</label><a class="next-link" href="#step-11">Next: check the roles</a></div>
+</section>
+
+<section class="step" id="step-11" data-step="11">
+ <div class="step-top"><span class="step-num">11</span><div style="flex:1"><h2>Check the roles and approve a booking</h2><span class="where browser">In your web app</span></div><div class="minimap"><span>AI</span><span class="on fe">Frontend</span><span class="on be">Backend</span><span class="on db">Database</span></div></div>
+ <ol class="do">
+  <li>Open your Web app URL with your own account. The <strong>Admin Dashboard</strong> tab appears.</li>
+  <li>Ask your neighbour to open your link with their account. They see <strong>no admin tab</strong>.</li>
+  <li>In the Admin Dashboard, add a remark and click <strong>Approve</strong>.</li>
+  <li>The public schedule and your Google Sheet both show <strong>Approved</strong>.</li>
+ </ol>
+ <div class="shots">
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/roles-admin-view.png" alt="Admin view with Book a Room and Admin Dashboard tabs" loading="lazy"></button><figcaption>Your account: the admin tab appears</figcaption></figure>
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/roles-user-view.png" alt="User view with no admin tab" loading="lazy"></button><figcaption>Another account: no admin tab</figcaption></figure>
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/admin-approve.png" alt="Admin dashboard approving a pending booking with remarks" loading="lazy"></button><figcaption>Approving with a remark</figcaption></figure>
+  <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/status-approved.png" alt="Public schedule showing Approved status" loading="lazy"></button><figcaption>Status: Approved</figcaption></figure>
+ </div>
+ <figure class="shot"><button aria-label="Enlarge screenshot"><img src="assets/img/sheet-updated.png" alt="Google Sheet row with Booking Status Approved and admin remarks" loading="lazy"></button><figcaption>The Sheet updates too: Booking Status and Admin Remarks</figcaption></figure>
+ <div class="done-row"><label class="check"><input type="checkbox" data-celebrate> Roles work and I approved a booking</label><a class="next-link" href="#step-12">Next: challenges</a></div>
+</section>
+
+<section class="step" id="step-12" data-step="12">
+ <div class="step-top"><span class="step-num">12</span><div style="flex:1"><h2>Challenges: try them one by one</h2><span class="where gemini">In Gemini, then redeploy</span></div><div class="minimap"><span class="on ai">AI</span><span class="on fe">Frontend</span><span class="on be">Backend</span><span class="on db">Database</span></div></div>
+ <p>Write your own prompt for each, using the 4 golden rules. Stuck? Open the hint. After each one: paste the full code, save, and <strong>deploy a new version</strong>.</p>
+ <div class="challenges">
+  <div class="chal"><h4>&#9993;&#65039; Email the decision</h4><p>Send a notification email once a booking is approved or rejected.</p><details><summary>Need a hint?</summary><div class="prompt" id="c1"><button class="copy" data-copy="c1">Copy</button>Update the system so that when an admin approves or rejects a booking, the lecturer automatically receives an email with the decision, room, date, time and admin remarks. Output the fully updated Code.gs and Index.html. Don't provide patches.</div></details></div>
+  <div class="chal"><h4>&#128101; Manage admins on the website</h4><p>Set the admin list through the website, not directly in the Google Sheet.</p><details><summary>Need a hint?</summary><div class="prompt" id="c2"><button class="copy" data-copy="c2">Copy</button>Add a "Manage Admins" section inside the Admin Dashboard where admins can add or remove admin emails. Store the list in the admin sheet. Only admins can see or use it, using server-side scriptlets and server-side checks. Only accept emails ending in @unimap.edu.my. Output the fully updated Code.gs and Index.html. Don't provide patches.</div></details></div>
+  <div class="chal"><h4>&#128683; Prevent clashing bookings</h4><p>Stop two bookings for the same room at overlapping times.</p><details><summary>Need a hint?</summary><div class="prompt" id="c3"><button class="copy" data-copy="c3">Copy</button>Before saving a new booking, check for any Pending or Approved booking in the same room on the same date with an overlapping time. If there is a clash, do not save it, and show a clear message naming the conflicting booking. Do this check in Code.gs on the server, not only in the browser. Output the fully updated Code.gs and Index.html. Don't provide patches.</div></details></div>
+  <div class="chal"><h4>&#128197; Show room availability</h4><p>Show which time slots are taken before a lecturer books.</p><details><summary>Need a hint?</summary><div class="prompt" id="c4"><button class="copy" data-copy="c4">Copy</button>When a lecturer selects a room and a date in the booking form, show the time slots already taken (Pending and Approved) for that room on that date, so they can choose a free slot. Update it automatically when the room or date changes. Output the fully updated Code.gs and Index.html. Don't provide patches.</div></details></div>
+ </div>
+ <div class="done-row"><label class="check"><input type="checkbox" data-celebrate> I finished at least one challenge</label><a class="next-link" href="help.html#next">What's next?</a></div>
+</section>
+ </div>
+</div>
+</main>
+<footer class="footer"><div class="wrap"><div>&copy; 2026 <a href="https://zamrizahir88.github.io/cv/main.html" target="_blank" rel="noopener">Ts. Dr. Mohd Zamri Bin Zahir Ahmad</a>. All rights reserved.</div><div class="who">Senior Lecturer, Faculty of Engineering Technology (FKTEN), Universiti Malaysia Perlis</div></div></footer>
+<script src="assets/js/common.js"></script><script src="assets/js/guide.js"></script></body></html>

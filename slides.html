@@ -1,0 +1,505 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23f2a900'/><text x='16' y='22' font-family='monospace' font-weight='700' font-size='15' text-anchor='middle' fill='%230f2742'>AI</text></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Slides | AI-Assisted Web System Development 2026</title>
+<link rel="stylesheet" href="assets/css/demo.css">
+<link rel="stylesheet" href="assets/css/slides.css">
+</head><body class="deck">
+<header class="topbar"><div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark">AI</span><span><span class="full">AI-Assisted Web System Development </span>2026</span></a>
+<nav class="nav" aria-label="Main">
+<a href="index.html">Home</a>
+<a href="slides.html" aria-current="page">Slides</a>
+<a href="guide.html">Hands-on guide</a>
+<a href="help.html">Help</a>
+</nav></div></header>
+<main class="stage-wrap"><div class="stage" id="stage">
+<section class="slide dark" data-id="cover">
+ <div class="cover">
+  <div>
+   <p class="kicker">Hands-on workshop for FKTEN lecturers</p>
+   <h1>AI-Assisted Web System Development</h1>
+   <p class="sub">Build the FKTEN eBooking Room System with Google Apps Script, Google Sheets and Gemini.</p>
+   <div class="meta">
+    <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Thursday, 1 October 2026, 9:30 AM to 12:30 PM</span>
+    <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>VIBE Room, FKTEN, UniMAP</span>
+   </div>
+   <div class="who"><b>Ts. Dr. Mohd Zamri Bin Zahir Ahmad</b>Senior Lecturer, FKTEN, UniMAP</div>
+  </div>
+  <div class="cover-art">
+   <svg class="art" viewBox="0 0 430 340" role="img" aria-label="A booking form sending rows into a Google Sheet">
+    <rect x="0" y="10" width="270" height="215" rx="14" fill="#17365a" stroke="#2b4d77" stroke-width="2"/>
+    <rect x="1" y="11" width="268" height="34" rx="13" fill="#21456f"/><rect x="1" y="32" width="268" height="13" fill="#21456f"/>
+    <circle cx="20" cy="28" r="5" fill="#ff5f57"/><circle cx="36" cy="28" r="5" fill="#febc2e"/><circle cx="52" cy="28" r="5" fill="#28c840"/>
+    <rect x="20" y="60" width="130" height="11" rx="5" fill="#8fb4ff"/>
+    <rect x="20" y="84" width="230" height="22" rx="5" fill="#0f2742" stroke="#3a5f8c"/>
+    <rect x="26" y="92" width="90" height="7" rx="3" fill="#dfe8f2" class="typing"/>
+    <rect x="20" y="114" width="110" height="22" rx="5" fill="#0f2742" stroke="#3a5f8c"/><rect x="140" y="114" width="110" height="22" rx="5" fill="#0f2742" stroke="#3a5f8c"/>
+    <rect x="20" y="144" width="230" height="22" rx="5" fill="#0f2742" stroke="#3a5f8c"/>
+    <rect x="20" y="180" width="230" height="26" rx="6" fill="#0d6efd" class="pulse"/>
+    <rect x="160" y="130" width="270" height="205" rx="14" fill="#ffffff"/>
+    <rect x="160" y="130" width="270" height="36" rx="14" fill="#188038"/><rect x="160" y="152" width="270" height="14" fill="#188038"/>
+    <rect x="176" y="143" width="120" height="10" rx="5" fill="#ffffff" opacity=".85"/>
+    <g stroke="#e0e6ee" stroke-width="1.5"><line x1="160" y1="200" x2="430" y2="200"/><line x1="160" y1="234" x2="430" y2="234"/><line x1="160" y1="268" x2="430" y2="268"/><line x1="160" y1="302" x2="430" y2="302"/><line x1="250" y1="166" x2="250" y2="335"/><line x1="340" y1="166" x2="340" y2="335"/></g>
+    <g class="row"><rect x="172" y="178" width="60" height="9" rx="4" fill="#9aa8b8"/><rect x="262" y="178" width="66" height="9" rx="4" fill="#9aa8b8"/><rect x="352" y="176" width="56" height="13" rx="4" fill="#198754"/></g>
+    <g class="row r2"><rect x="172" y="212" width="52" height="9" rx="4" fill="#9aa8b8"/><rect x="262" y="212" width="60" height="9" rx="4" fill="#9aa8b8"/><rect x="352" y="210" width="56" height="13" rx="4" fill="#198754"/></g>
+    <g class="row r3"><rect x="172" y="246" width="64" height="9" rx="4" fill="#9aa8b8"/><rect x="262" y="246" width="56" height="9" rx="4" fill="#9aa8b8"/><rect x="352" y="244" width="56" height="13" rx="4" fill="#ffc107"/></g>
+    <g class="row r4"><rect x="164" y="270" width="262" height="30" fill="#fdf1d3"/><rect x="172" y="280" width="58" height="9" rx="4" fill="#8a5a00"/><rect x="262" y="280" width="64" height="9" rx="4" fill="#8a5a00"/><rect x="352" y="278" width="56" height="13" rx="4" fill="#ffc107"/></g>
+    <path d="M 135 210 Q 138 285 158 285" fill="none" stroke="#f2a900" stroke-width="3.5" stroke-linecap="round"/><path d="M150 278 L159 285 L150 292" fill="none" stroke="#f2a900" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+   </svg>
+   <div class="qrbox"><img src="assets/img/qr.svg" alt="QR code for the workshop website"><div><b>Follow along</b>zamrizahir88.github.io<br>/aiworkshop2026</div></div>
+  </div>
+ </div>
+ <aside class="notes">Welcome everyone. By 12:30 each of you will have a live web system you built yourself, with Gemini writing the code. No coding background needed. Scan the QR code now: the website has these slides, the step-by-step guide with copy buttons for every prompt, and a help page. It stays online after today.</aside>
+</section>
+
+<section class="slide" data-id="journey">
+ <div class="s-head"><div><p class="s-sec"><i></i>Today</p><h2 class="s-title">Our 3-hour journey</h2></div><span class="hint">Click a stop for details</span></div>
+ <div class="s-body">
+  <div class="jn">
+   <div class="jn-line"><i></i></div>
+   <button class="jn-stop here sel" data-i="0"><time>9:30</time><h3>Intro and prompting</h3></button>
+   <button class="jn-stop" data-i="1"><time>10:00</time><h3>Setup and first build</h3></button>
+   <button class="jn-stop" data-i="2"><time>10:45</time><h3>Deploy and test</h3></button>
+   <button class="jn-stop" data-i="3"><time>11:15</time><h3>Iterate</h3></button>
+   <button class="jn-stop" data-i="4"><time>12:00</time><h3>Fix, Q&amp;A, wrap-up</h3></button>
+  </div>
+  <div class="jn-detail"><div class="panel"><h4>What you'll do</h4><p data-jd="do"></p></div><div class="panel"><h4>What you'll have at the end</h4><p data-jd="have"></p></div></div>
+  <p class="jn-foot">30 minutes of ideas now. Everything after 10:00 is hands-on, on your own laptop.</p>
+ </div>
+ <aside class="notes">Quick map of the morning. Click through the stops if people want detail. This first half hour is the only lecture part. From 10:00 everyone builds along with me using the Hands-on guide on the website. If anyone falls behind, 12:00 is reserved for catching up.</aside>
+</section>
+
+<section class="slide" data-id="build">
+ <div class="s-head"><div><p class="s-sec"><i></i>The goal</p><h2 class="s-title">What we'll build today</h2></div><button class="sbtn" data-act="replay">Replay</button></div>
+ <div class="s-body build">
+  <div data-demo></div>
+  <div>
+   <ol class="stages">
+    <li><b>Step 1</b>A lecturer books a room from the list of 6 official rooms</li>
+    <li><b>Step 2</b>It's saved as Pending in the schedule and the Sheet</li>
+    <li><b>Step 3</b>An admin approves it from the Admin Dashboard</li>
+    <li><b>Step 4</b>The status changes to Approved everywhere</li>
+   </ol>
+   <p class="build-note">This is the real eBooking Room System, built entirely with prompts.</p>
+  </div>
+ </div>
+ <aside class="notes">This is the finished system, animated. Left: the web app your colleagues use. Right: the Google Sheet where the data lives. Watch a lecturer book Bilik Diskusi, the booking appear as Pending, then an admin open the Admin Dashboard tab and approve it. By 12:30 each of you will have this exact system running under your own account.</aside>
+</section>
+<section class="slide" data-id="static-system">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 1: Web basics</p><h2 class="s-title">Static website vs. web system</h2></div><span class="hint">Try both: they're live</span></div>
+ <div class="s-body svs">
+  <div class="panel">
+   <h3><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1a5fd0" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Static website</h3>
+   <p class="ana">Like a printed notice board</p>
+   <div class="mini"><div class="mini-bar"><span>fkten.unimap.edu.my/about</span><span data-vis>Visitor 1</span></div>
+    <div class="mini-body notice"><h4>About FKTEN</h4><p>The Faculty of Engineering Technology offers programmes in electrical, mechanical and civil engineering technology.</p><p>Office hours: 8:00 AM to 5:00 PM.</p></div></div>
+   <div class="row"><button class="sbtn" data-act="visit">Visit as another person</button><span class="verdict" style="background:var(--blue-soft);color:#0b3a8c">Same page for everyone. Read-only.</span></div>
+  </div>
+  <div class="panel">
+   <h3><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#188038" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Web system</h3>
+   <p class="ana">Like a sign-up sheet</p>
+   <div class="mini"><div class="mini-bar"><span>Room sign-up</span><span data-cnt>2 records stored</span></div>
+    <div class="mini-body">
+     <div class="row"><input data-in placeholder="Your name" aria-label="Your name"><select data-rm aria-label="Room"><option>Bilik Diskusi</option><option>Dewan Seminar</option><option>Bilik Tutorial</option></select><button class="sbtn solid" data-act="add">Add</button></div>
+     <ul class="list" data-list></ul>
+    </div></div>
+   <div class="row"><div class="crud"><span data-op="C">Create</span><span data-op="R">Read</span><span data-op="U">Update</span><span data-op="D">Delete</span></div></div>
+  </div>
+ </div>
+ <p class="svs-foot">Today we build a web system: data goes in, is stored, and comes back out.</p>
+ <aside class="notes">Make this interactive. Left: click "Visit as another person" a few times. The visitor changes but the page never does. That's static. Right: ask a participant for their name, type it and click Add, then delete one with the ×. Point to the CRUD labels lighting up: Create, Read, Update, Delete. If a site does any of those with data, it's a web system.</aside>
+</section>
+
+<section class="slide" data-id="quiz">
+ <div class="s-head"><div><p class="s-sec"><i></i>Quick check</p><h2 class="s-title">Static or web system? Shout it out.</h2></div><span class="hint">Click a card or press <b>→</b> to reveal</span></div>
+ <div class="s-body quiz">
+  <button class="qcard"><div class="in"><div class="f"><span>1</span><h3>Faculty "About Us" page</h3><p>Info that rarely changes</p></div><div class="b st"><strong>Static</strong><p>Same information for every visitor.</p></div></div></button>
+  <button class="qcard"><div class="in"><div class="f"><span>2</span><h3>Room booking form</h3><p>Lecturers submit requests</p></div><div class="b sy"><strong>Web system</strong><p>Every request is stored and tracked.</p></div></div></button>
+  <button class="qcard"><div class="in"><div class="f"><span>3</span><h3>Programme brochure PDF</h3><p>Download and read</p></div><div class="b st"><strong>Static</strong><p>A read-only file.</p></div></div></button>
+  <button class="qcard"><div class="in"><div class="f"><span>4</span><h3>QR e-attendance</h3><p>Students scan to check in</p></div><div class="b sy"><strong>Web system</strong><p>Records who checked in and when.</p></div></div></button>
+  <button class="qcard"><div class="in"><div class="f"><span>5</span><h3>Seminar poster page</h3><p>Date, venue and speakers</p></div><div class="b st"><strong>Static</strong><p>Nothing is saved.</p><small>Unless it has a registration form!</small></div></div></button>
+  <button class="qcard"><div class="in"><div class="f"><span>6</span><h3>FYP title submission</h3><p>Students propose, lecturers vet</p></div><div class="b sy"><strong>Web system</strong><p>Submissions, reviews and decisions are stored.</p><small>Your next project?</small></div></div></button>
+  <span class="frag marker"></span><span class="frag marker"></span><span class="frag marker"></span><span class="frag marker"></span><span class="frag marker"></span><span class="frag marker"></span>
+ </div>
+ <aside class="notes">Read each card aloud and let the room answer before revealing. #5 is a nice discussion point: add a registration form and it becomes a web system. #6 is exactly the Title Proposal Vetting system we'll discuss at the end.</aside>
+</section>
+
+<section class="slide" data-id="layers">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 1: Web basics</p><h2 class="s-title">Every web system has 3 layers</h2></div><button class="sbtn solid" data-act="send">Send a booking through</button></div>
+ <div class="s-body">
+  <div class="layers">
+   <div class="layer c-fe" data-l="0"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8"/></svg></div><h3>Frontend</h3><p class="what">What users see and click</p><span class="file">Index.html</span><hr><p class="rest">In a restaurant<b>Dining area and menu</b></p></div>
+   <div class="l-arrow"><svg width="40" height="24" viewBox="0 0 40 24"><path d="M2 8h26M22 2l8 6-8 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M38 18H12M18 12l-8 6 8 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/></svg></div>
+   <div class="layer c-be" data-l="1"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div><h3>Backend</h3><p class="what">The logic behind the scenes</p><span class="file">Code.gs</span><hr><p class="rest">In a restaurant<b>Kitchen and chef</b></p></div>
+   <div class="l-arrow"><svg width="40" height="24" viewBox="0 0 40 24"><path d="M2 8h26M22 2l8 6-8 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M38 18H12M18 12l-8 6 8 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/></svg></div>
+   <div class="layer c-db" data-l="2"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div><h3>Database</h3><p class="what">Where the data lives</p><span class="file">Google Sheets</span><hr><p class="rest">In a restaurant<b>Store room</b></p></div>
+  </div>
+  <div class="l-msg"><div class="panel"><span class="tok">&#128203;</span><span data-lmsg>Click "Send a booking through" to follow one booking.</span></div></div>
+ </div>
+ <aside class="notes">Restaurant analogy: customers sit in the dining area and order from the menu (frontend). They never enter the kitchen, where the chef works (backend). The chef fetches ingredients from the store room (database). Click the button to follow one booking through all three layers and back. When something breaks later, the first question is "which layer is it in?"</aside>
+</section>
+<section class="slide dark" data-id="gas">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 1: Web basics</p><h2 class="s-title">What is Google Apps Script?</h2></div></div>
+ <div class="s-body gas">
+  <div>
+   <p class="big-statement">Google's free coding platform that lives inside your Google account.</p>
+   <div class="feat">
+    <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.8A6 6 0 1 0 6 17.5"/><path d="M6 19h11.5"/></svg><b>Nothing to install</b><span>Code and run it in your browser</span></div>
+    <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3"/></svg><b>Your staff login</b><span>Runs on your UniMAP Google account</span></div>
+    <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><b>Talks to Google apps</b><span>Sheets, Gmail, Calendar, Drive</span></div>
+    <div><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><b>One-link web app</b><span>Deploy it and share a URL</span></div>
+   </div>
+   <p class="gas-note">The language is JavaScript. You don't need to know it today: Gemini does.</p>
+  </div>
+  <div class="gmock" data-gm>
+   <div class="gm-top"><svg width="22" height="28" viewBox="0 0 16 20"><path d="M10 0H2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6z" fill="#188038"/><path d="M3 9h10v7H3z" fill="#fff"/></svg><span class="t">eBooking Room System</span></div>
+   <div class="gm-menu"><span>File</span><span>Edit</span><span>View</span><span>Insert</span><span>Format</span><span>Data</span><span>Tools</span><span data-ext>Extensions</span><span>Help</span></div>
+   <div class="gm-cells"><div></div><div>A</div><div>B</div><div>C</div><div>D</div><div>E</div>
+<div>1</div><div style="color:#202124;font-weight:600">Timestamp</div><div style="color:#202124;font-weight:600">Lecturer Name</div><div style="color:#202124;font-weight:600">Staff Email</div><div style="color:#202124;font-weight:600">Room Requested</div><div style="color:#202124;font-weight:600">Date of Event</div>
+<div>2</div><div></div><div></div><div></div><div></div><div></div>
+<div>3</div><div></div><div></div><div></div><div></div><div></div>
+<div>4</div><div></div><div></div><div></div><div></div><div></div>
+<div>5</div><div></div><div></div><div></div><div></div><div></div>
+<div>6</div><div></div><div></div><div></div><div></div><div></div>
+<div>7</div><div></div><div></div><div></div><div></div><div></div>
+<div>8</div><div></div><div></div><div></div><div></div><div></div>
+<div>9</div><div></div><div></div><div></div><div></div><div></div>
+<div>10</div><div></div><div></div><div></div><div></div><div></div></div>
+   <div class="gm-drop" data-drop><div>Add-ons</div><div>Macros</div><div data-as><svg width="16" height="16" viewBox="0 0 24 24"><path d="M4 16l8-12 8 12" fill="none" stroke="#f2a900" stroke-width="3"/><circle cx="12" cy="18" r="3" fill="#188038"/></svg>Apps Script</div><div>AppSheet</div></div>
+   <div class="gm-ed" data-ed><div class="h"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 16l8-12 8 12" fill="none" stroke="#f2a900" stroke-width="3"/><circle cx="12" cy="18" r="3" fill="#188038"/></svg>Apps Script <span style="color:#5f6368;margin-left:8px">eBooking Room System</span></div><div class="fl"><div>Code.gs</div></div><pre>function myFunction() {
+
+}</pre></div>
+   <svg class="gm-cur" data-cur viewBox="0 0 24 24"><path d="M4 2l15 11-7 1.2 4 7.3-3 1.6-4-7.4L4 20z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg>
+   <div class="gm-cap" data-cap>Open any Google Sheet</div>
+  </div>
+ </div>
+ <aside class="notes">Apps Script is built into Google Workspace. The animation shows exactly how we'll open it later: from your Google Sheet, Extensions, then Apps Script. The editor opens with an empty Code.gs file. The script is attached to that Sheet. There's no server to rent and nothing to install, which is why it's perfect for small faculty systems.</aside>
+</section>
+
+<section class="slide" data-id="sheets">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 1: Web basics</p><h2 class="s-title">Why Google Sheets as our database?</h2></div><span class="hint">Press <b>→</b> to reveal</span></div>
+ <div class="s-body pc">
+  <div class="panel c-db frag"><h3>Great for</h3>
+   <div class="it"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#188038" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6"/></svg><div><b>Familiar</b><span>Everyone already knows spreadsheets</span></div></div>
+   <div class="it"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#188038" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6"/></svg><div><b>Free</b><span>Included with your UniMAP account</span></div></div>
+   <div class="it"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#188038" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6"/></svg><div><b>Visual</b><span>Watch each booking arrive as a new row</span></div></div>
+   <div class="it"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#188038" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6"/></svg><div><b>Flexible</b><span>Filter, chart, share, export to Excel</span></div></div>
+  </div>
+  <div class="panel frag" style="--c:#c07a00"><h3>Watch out for</h3>
+   <div class="it"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c07a00" stroke-width="2.5"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></svg><div><b>Small scale only</b><span>Fine for a faculty, not thousands of users at once</span></div></div>
+   <div class="it"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c07a00" stroke-width="2.5"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></svg><div><b>No sensitive data</b><span>Avoid IC numbers, grades and medical information</span></div></div>
+   <div class="it"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c07a00" stroke-width="2.5"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></svg><div><b>Editors can change data</b><span>Share the Sheet itself carefully</span></div></div>
+   <div class="it"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c07a00" stroke-width="2.5"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></svg><div><b>Daily quotas</b><span>Google limits how much a script can run per day</span></div></div>
+  </div>
+ </div>
+ <aside class="notes">A big system would use a proper database like MySQL. For a faculty with a few hundred users, Google Sheets is more than enough, and you can literally watch the data arrive. Be honest about the limits. Also note: users of the web app don't need access to the Sheet. The script reads and writes it on your behalf.</aside>
+</section>
+
+<section class="slide" data-id="flow">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 1: Web basics</p><h2 class="s-title">How our system works, step by step</h2></div><span class="hint">Press <b>→</b> for each step</span></div>
+ <div class="s-body">
+  <div class="flow" data-flow>
+   <svg width="1152" height="330" style="position:absolute;left:0;top:0" aria-hidden="true">
+    <defs><marker id="fa" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="16" refX="14" refY="8" orient="auto"><path d="M0,0 L16,8 L0,16 z" fill="#9aa8b8"/></marker></defs>
+    <g stroke="#9aa8b8" stroke-width="4" fill="none">
+     <line x1="234" y1="100" x2="302" y2="100" marker-end="url(#fa)"/>
+     <line x1="536" y1="100" x2="610" y2="100" marker-end="url(#fa)"/>
+     <line x1="844" y1="100" x2="916" y2="100" marker-end="url(#fa)"/>
+     <line x1="918" y1="170" x2="846" y2="170" stroke-dasharray="9 7" marker-end="url(#fa)"/>
+     <line x1="612" y1="170" x2="538" y2="170" stroke-dasharray="9 7" marker-end="url(#fa)"/>
+    </g>
+   </svg>
+   <div class="fnode c-fe" style="left:0" data-n="0"><span class="e">&#128100;</span><b>Lecturer</b><span>in the browser</span></div>
+   <div class="fnode c-fe" style="left:306px" data-n="1"><span class="e">&#128421;&#65039;</span><b>Index.html</b><span>Frontend</span></div>
+   <div class="fnode c-be" style="left:614px" data-n="2"><span class="e">&#9881;&#65039;</span><b>Code.gs</b><span>Backend</span></div>
+   <div class="fnode c-db" style="left:920px" data-n="3"><span class="e">&#128202;</span><b>Google Sheet</b><span>Database</span></div>
+   <p class="flabel" style="left:170px;top:2px">fills the form</p>
+   <p class="flabel" style="left:473px;top:2px">google.script.run</p>
+   <p class="flabel" style="left:780px;top:2px">appendRow()</p>
+   <p class="flabel" style="left:780px;top:226px">getValues()</p>
+   <p class="flabel" style="left:473px;top:226px">list of bookings</p>
+   <div class="fdot" data-dot></div>
+  </div>
+  <div class="fcap"><span class="n" data-fn>1</span><span data-ft>Press → to follow one booking through the system.</span></div>
+  <span class="frag marker"></span><span class="frag marker"></span><span class="frag marker"></span><span class="frag marker"></span><span class="frag marker"></span>
+ </div>
+ <aside class="notes">Step through with the arrow key. 1: the lecturer types into the form. 2: the page sends the data to Code.gs using a built-in Apps Script bridge called google.script.run. 3: Code.gs adds a new row to the Sheet. 4: Code.gs reads all the rows back. 5: the page redraws the table. Nobody needs to memorise the function names. What matters is the direction of travel. When a booking doesn't appear later, ask: where did the dot stop?</aside>
+</section>
+<section class="slide" data-id="vibe">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 2: Vibe coding</p><h2 class="s-title">What is vibe coding?</h2></div></div>
+ <div class="s-body vibe">
+  <div>
+   <p class="big"><span>You describe it.</span><span>AI writes the code.</span><span>You test and steer.</span></p>
+   <p class="d">A term popularised in 2025 for building software by talking to an AI in plain language, instead of typing every line yourself.</p>
+   <div class="panel vdesc"><b data-vk>Describe</b><span data-vd>Say what you want in plain language, using the 4 golden rules.</span></div>
+  </div>
+  <div class="cycle">
+   <div class="ring"></div>
+   <button class="cyc on" style="left:165px;top:76px" data-c="0">&#128172; Describe</button>
+   <button class="cyc" style="left:315px;top:226px" data-c="1">&#10024; Generate</button>
+   <button class="cyc" style="left:165px;top:376px" data-c="2">&#129514; Test</button>
+   <button class="cyc" style="left:15px;top:226px" data-c="3">&#128295; Refine</button>
+   <div class="orb"></div>
+   <div class="mid"><b>You</b> steer.<br><b>AI</b> types.</div>
+  </div>
+ </div>
+ <aside class="notes">Vibe coding: describe, generate, test, refine, and round again. Click any stage to explain it. The key message for this room: you're not learning to code today, you're learning to direct an AI that codes. That's a skill lecturers already have: giving clear instructions and checking work.</aside>
+</section>
+
+<section class="slide" data-id="roles">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 2: Vibe coding</p><h2 class="s-title">Who does what? Sort them out.</h2></div><span class="hint">Ask the room, then click AI or You</span></div>
+ <div class="s-body rg">
+  <div class="rcol ai"><h3><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1a5fd0" stroke-width="2"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg><div>Gemini<small>The fast typist</small></div></h3><div class="slot" data-slot="a"></div></div>
+  <div class="pool" data-pool></div>
+  <div class="rcol you"><h3><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#f2a900" stroke-width="2"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"/></svg><div>You<small>The director</small></div></h3><div class="slot" data-slot="y"></div></div>
+ </div>
+ <p class="rfoot">Knowing how FKTEN bookings work matters more than knowing syntax.</p>
+ <aside class="notes">A quick game. Read each statement and ask the room: AI or You? Click the answer. A wrong click shakes the card. The point: Gemini is an extremely fast typist, but it doesn't know your faculty's rules, rooms or approval process. You bring that, and you're the one who tests and decides.</aside>
+</section>
+
+<section class="slide dark" data-id="mistakes">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 2: Vibe coding</p><h2 class="s-title">Setting expectations: AI will make mistakes</h2></div><span class="hint">Click a card for a real example</span></div>
+ <div class="s-body" style="display:flex;flex-direction:column;gap:22px">
+  <div class="mk">
+   <button class="mcard"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></svg><b>Forgets earlier requirements</b><div class="ex">You asked for the 6 official rooms. The new version shows a free-text room box instead.</div><span class="tap">Click for example</span></button>
+   <button class="mcard"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></svg><b>Invents functions that don't exist</b><div class="ex"><code>SpreadsheetApp.getBookingSheet()</code><br>Looks real. Doesn't exist. Error on first run.</div><span class="tap">Click for example</span></button>
+   <button class="mcard"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></svg><b>Sounds confident when wrong</b><div class="ex">"This code is complete and fully tested." It hasn't run anything. Only you can test it.</div><span class="tap">Click for example</span></button>
+   <button class="mcard"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></svg><b>Changes things you didn't ask for</b><div class="ex">You asked for a loading spinner. It also renamed "Booking Status" to "Status", and now the Sheet doesn't match.</div><span class="tap">Click for example</span></button>
+  </div>
+  <div class="mbanner"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>Never copy-paste blindly. Test every change.</div>
+ </div>
+ <aside class="notes">Set this expectation now so nobody is discouraged later. Everyone will hit an error today, and that's part of the process. Click through the examples: these are the four most common. The protective habit: after every paste and redeploy, test the system again before asking for the next change.</aside>
+</section>
+<section class="slide" data-id="rctc">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 3: Prompting for code</p><h2 class="s-title">The 4 golden rules: build a prompt</h2></div><span class="hint">Toggle each rule, or press <b>→</b></span></div>
+ <div class="s-body rctc">
+  <div class="toggles">
+   <button class="tg t-r" data-k="r"><span class="L">R</span><div><b>Role</b><span>Who should the AI be?</span></div><i class="sw"></i></button>
+   <button class="tg t-c" data-k="c"><span class="L">C</span><div><b>Context</b><span>What's the situation?</span></div><i class="sw"></i></button>
+   <button class="tg t-t" data-k="t"><span class="L">T</span><div><b>Task</b><span>What exactly do you want?</span></div><i class="sw"></i></button>
+   <button class="tg t-k" data-k="k"><span class="L">C</span><div><b>Constraints</b><span>What are the rules?</span></div><i class="sw"></i></button>
+  </div>
+  <div class="pv">
+   <div class="pv-box" data-pv></div>
+   <div class="meter" data-meter><i></i><i></i><i></i><i></i></div>
+   <div class="ai-says"><span class="av">AI</span><span data-says></span></div>
+  </div>
+  <span class="frag marker"></span><span class="frag marker"></span><span class="frag marker"></span><span class="frag marker"></span>
+ </div>
+ <aside class="notes">Build Prompt 1 live, one rule at a time. Watch the prompt grow and the AI's reaction change. Role changes the vocabulary and depth. Context gives what the AI can't guess: our faculty, our 6 rooms, our platform. Task makes it specific and countable. Constraints set the rules: format, tone, and what not to do. Every missing rule is something the AI has to guess, and guesses are where mistakes come from.</aside>
+</section>
+
+<section class="slide" data-id="weakstrong">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 3: Prompting for code</p><h2 class="s-title">Weak prompt vs. strong prompt</h2></div><span class="hint">Press <b>→</b> to reveal</span></div>
+ <div class="s-body ws">
+  <div class="panel weak">
+   <h3><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#c5362b" stroke-width="2.4"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></svg>Weak</h3>
+   <div class="pbox">Make me a booking website.</div>
+   <p style="margin:0;font-size:18px;color:var(--muted)">The AI has to guess:</p>
+   <div class="guess frag"><span>Which platform?</span><span>Which rooms?</span><span>Which fields?</span><span>Who approves?</span><span>How many files?</span></div>
+   <p class="res frag">A different, random result every time</p>
+  </div>
+  <div class="panel strong frag">
+   <h3><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#188038" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6"/></svg>Strong</h3>
+   <div class="pbox"><span style="color:#1a5fd0">Act as a Senior Web Systems Analyst.</span> <span style="color:#15603a">I want to build an Online Room Reservation System for FKTEN using Google Apps Script and Google Sheets, limited to our 6 official rooms.</span> <span style="color:#8a5a00">Suggest 5 essential features, the data fields to store, and a booking status workflow.</span> <span style="color:#0f2742;text-decoration:underline">Keep it simple and non-technical. Do not write code yet.</span></div>
+   <div class="leg"><span style="color:#1a5fd0">■ Role</span><span style="color:#15603a">■ Context</span><span style="color:#8a5a00">■ Task</span><span style="color:#0f2742">■ Constraints</span></div>
+   <p class="res">Focused, predictable and usable</p>
+  </div>
+ </div>
+ <aside class="notes">Same goal, two prompts. The weak one leaves everything to chance: you might get PHP, WordPress or something you can't run. The strong one is a shortened version of Prompt 1, which you'll send at 10:00, colour-coded by rule. Optional live demo: paste both into Gemini and compare.</aside>
+</section>
+
+<section class="slide" data-id="anatomy">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 3: Prompting for code</p><h2 class="s-title">Anatomy of our build prompt (Prompt 3)</h2></div><span class="hint">Press <b>→</b> or click a part</span></div>
+ <div class="s-body anat">
+<div class="code" data-code><span class="seg sg-t" data-s="t">Now write the complete code for the FKTEN Room Reservation System using Google Apps Script.</span>
+
+Requirements:
+<span class="seg sg-d" data-s="d">1. Google Sheet structure: Columns are followed as given previously.</span>
+<span class="seg sg-b" data-s="b">2. Backend (Code.gs): Functions to serve the web app (doGet), append new booking form submissions to the sheet, and fetch existing bookings to display.</span>
+<span class="seg sg-f" data-s="f">3. Frontend (Index.html):
+   - A clean booking form with inputs matching the fields.
+   - A table below the form displaying all current bookings.
+   - Use Bootstrap 5 CSS via CDN for a modern, responsive look.</span>
+
+<span class="seg sg-k" data-s="k">STRICT CONSTRAINTS:
+- Output ONLY 2 code blocks: Code.gs and Index.html.
+- Put all CSS in &lt;style&gt; and JavaScript in &lt;script&gt; inside Index.html.
+- Include comments explaining where to insert the Google Sheet ID.</span></div>
+  <div class="alist">
+   <button class="aitem sg-t" data-s="t"><b><i></i>Task</b><p>One clear sentence: what to build, and with what.</p></button>
+   <button class="aitem sg-d" data-s="d"><b><i></i>Data</b><p>Points back to the column headers from Prompt 2, so code and Sheet match.</p></button>
+   <button class="aitem sg-b" data-s="b"><b><i></i>Backend spec</b><p>Names the 3 jobs Code.gs must do: show the page, save, and read.</p></button>
+   <button class="aitem sg-f" data-s="f"><b><i></i>Frontend spec</b><p>Describes the screen: a form, a table, and Bootstrap for a professional look.</p></button>
+   <button class="aitem sg-k" data-s="k"><b><i></i>Constraints</b><p>Keeps the output beginner-friendly: exactly 2 files, easy to paste.</p></button>
+   <p class="anote">No "Act as…" line? Role and context were set in Prompt 1. Stay in the same Gemini chat so it remembers.</p>
+  </div>
+  <span class="frag marker"></span><span class="frag marker"></span><span class="frag marker"></span><span class="frag marker"></span><span class="frag marker"></span>
+ </div>
+ <aside class="notes">This is the exact Prompt 3 from the hands-on guide. Step through its five parts. Point out that there's no role line: it relies on the chat remembering Prompt 1 and 2. That's why switching chats midway causes trouble. The constraints section is what makes the output paste-able for beginners.</aside>
+</section>
+
+<section class="slide" data-id="constraints">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 3: Prompting for code</p><h2 class="s-title">Why the strict constraints?</h2></div><span class="hint">Click a card: what goes wrong without it?</span></div>
+ <div class="s-body cst">
+  <button class="fc" style="--cs:var(--blue-soft);--c2:#0b3a8c"><div class="in"><div class="f"><div class="rule">Only 2 files</div><p>Easy to copy. Nothing goes missing.</p><small>Click to see what goes wrong without it</small></div><div class="b"><h4>Without it</h4><p>The AI splits the code into 5 files. You miss one, and the page breaks with no clear reason.</p></div></div></button>
+  <button class="fc" style="--cs:var(--green-soft);--c2:#0f5a2a"><div class="in"><div class="f"><div class="rule">CSS and JS inside Index.html</div><p>No broken links between files.</p><small>Click to see what goes wrong without it</small></div><div class="b"><h4>Without it</h4><p>Separate style and script files need extra linking code in Apps Script. It fails silently: no colours, no buttons working.</p></div></div></button>
+  <button class="fc" style="--cs:var(--amber-soft);--c2:#8a5a00"><div class="in"><div class="f"><div class="rule">Full code, never patches</div><p>Replace everything, every time.</p><small>Click to see what goes wrong without it</small></div><div class="b"><h4>Without it</h4><p>"Replace lines 40 to 55 with this." One paste in the wrong place, one missing bracket, and nothing works.</p><div class="fix">Ctrl+A → Delete → Paste</div></div></div></button>
+  <span class="frag marker"></span><span class="frag marker"></span><span class="frag marker"></span>
+ </div>
+ <aside class="notes">Each constraint prevents a specific beginner problem. Flip each card. The third one matters most during iteration: from Prompt 4 onward, always ask for the full updated code, then select all, delete and paste. Prompt 4 in the guide already includes "Don't provide patches".</aside>
+</section>
+
+<section class="slide" data-id="chain">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 3: Prompting for code</p><h2 class="s-title">Today's prompt chain</h2></div><span class="hint">Press <b>→</b> to walk through</span></div>
+ <div class="s-body">
+  <div class="chain">
+   <div class="ch c-fe" style="--c:#1a5fd0;--cs:var(--blue-soft)"><span class="n">1</span><h3>Analyse</h3><p>Features, data fields and approval workflow for the 6 rooms</p><span class="tag">Prompt 1</span></div>
+   <div class="ch" style="--c:#188038;--cs:var(--green-soft)"><span class="n">2</span><h3>Design</h3><p>Exact column headers for Row 1 of the Sheet</p><span class="tag">Prompt 2</span></div>
+   <div class="ch" style="--c:#c07a00;--cs:var(--amber-soft)"><span class="n">3</span><h3>Build</h3><p>Complete Code.gs and Index.html</p><span class="tag">Prompt 3</span></div>
+   <div class="ch" style="--c:#0f2742;--cs:#e1e7ee"><span class="n">4</span><h3>Deploy</h3><p>Publish as a web app and test a booking</p><span class="tag">Hands-on</span></div>
+   <div class="ch" style="--c:#5b3fc4;--cs:#ece7fb"><span class="n">5</span><h3>Upgrade</h3><p>Admin and user roles with approvals</p><span class="tag">Prompt 4</span></div>
+  </div>
+  <div class="chain-foot"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg>Small steps beat one giant prompt. Stay in one chat.</div>
+  <span class="frag marker"></span><span class="frag marker"></span><span class="frag marker"></span><span class="frag marker"></span><span class="frag marker"></span>
+ </div>
+ <aside class="notes">This is the roadmap for the hands-on part. We never ask for the whole system at once. First Gemini thinks like an analyst, then we fix the columns, only then do we ask for code. Step 4 is done by hand. Step 5 adds roles and approvals. Then there are four challenge tasks for fast finishers.</aside>
+</section>
+
+<section class="slide" data-id="activity">
+ <div class="s-head"><div><p class="s-sec"><i></i>Your turn, 2 minutes</p><h2 class="s-title">Fix this prompt with your neighbour</h2></div></div>
+ <div class="s-body">
+  <div class="act-top">
+   <div class="act-prompt">make a website for room booking with database</div>
+   <div class="timer"><span class="t" data-t>2:00</span><div class="row"><button data-act="tstart">Start</button><button data-act="treset">Reset</button></div></div>
+  </div>
+  <div class="gaps">
+   <div class="gap frag" style="--c:#1a5fd0"><b>Role?</b><p>Who should the AI act as?</p></div>
+   <div class="gap frag" style="--c:#15803d"><b>Context?</b><p>Which faculty? Which platform? Which rooms?</p></div>
+   <div class="gap frag" style="--c:#b36b00"><b>Task?</b><p>Which features and fields, exactly?</p></div>
+   <div class="gap frag" style="--c:#0f2742"><b>Constraints?</b><p>How many files? What format?</p></div>
+  </div>
+  <div class="better frag"><b>One possible fix</b>Act as a Senior Web Developer. FKTEN lecturers need to book our 6 shared rooms. Using Google Apps Script and Google Sheets, build a booking form (name, email, room, date, time, purpose) and a table of bookings. Output only Code.gs and Index.html, with all CSS and JS inside Index.html.</div>
+ </div>
+ <aside class="notes">Start the 2-minute timer and let pairs discuss. Then reveal the four gaps one by one, asking pairs what they wrote for each. Finally reveal one possible fix. Good news: Prompts 1 to 3 in the guide already do all of this for you.</aside>
+</section>
+<section class="slide" data-id="debug">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 4: Survival skills</p><h2 class="s-title">When things break</h2></div><span class="hint">Press <b>→</b> to fix it together</span></div>
+ <div class="s-body dbg">
+  <div class="dwin"><div class="bar">Your web app, after clicking Submit Reservation</div>
+   <div class="in" data-dwin>
+    <div class="err"><b style="font-family:var(--sans)">Error</b><br><span class="msg">TypeError: Cannot read properties of null (reading 'appendRow')</span></div>
+    <span class="frag marker"></span>
+    <div class="bubble you frag">I got this error: TypeError: Cannot read properties of null (reading 'appendRow'). I expected the booking to be saved, but instead nothing was added to the Sheet. Please fix it and give me the FULL updated Code.gs and Index.html.</div>
+    <div class="bubble ai frag"><b>Gemini:</b> The script can't find your sheet tab. SHEET_NAME in Code.gs is "Sheet1", but your tab is named "Bookings". Here's the full updated Code.gs…</div>
+    <div class="bubble ok frag">&#10003; Replaced, saved, redeployed. Booking saved!</div>
+   </div>
+  </div>
+  <div class="dsteps">
+   <div class="ds on" data-ds="0"><span class="n">1</span><div><b>Copy the exact error message</b><span>From the page, or Apps Script › Executions</span></div></div>
+   <div class="ds" data-ds="1"><span class="n">2</span><div><b>Tell Gemini: expected vs. what happened</b><span>Describe the symptom, not your guess</span></div></div>
+   <div class="ds" data-ds="2"><span class="n">3</span><div><b>Read the explanation</b><span>You'll learn the cause, not just the fix</span></div></div>
+   <div class="ds" data-ds="3"><span class="n">4</span><div><b>Replace the full code, redeploy, test</b><span>One change at a time</span></div></div>
+   <div class="dtip"><span><b>Going in circles?</b> Start a new chat and paste your latest full code.</span></div>
+   <button class="sbtn solid" data-copy="fixit-tpl" style="justify-self:start">Copy the fix-it prompt</button>
+   <span id="fixit-tpl" hidden data-text="I got this error: [paste the exact error here]&#10;I expected: [what should happen]&#10;But instead: [what actually happened]&#10;Please fix it and give me the FULL updated Code.gs and Index.html. Don't provide patches."></span>
+  </div>
+</div>
+ <aside class="notes">This is the most common error today: Code.gs can't find the sheet because the Sheet ID or sheet name doesn't match. Walk through the loop. Copy the exact error. Tell Gemini what you expected and what happened: the symptom, not your guess. Read its explanation, replace the full code, redeploy, test. If after three or four rounds it's going in circles, start a fresh chat and paste your latest full code. The fix-it prompt is also on the Help page.</aside>
+</section>
+
+<section class="slide" data-id="savedeploy">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 4: Survival skills</p><h2 class="s-title">Saving is not deploying</h2></div><span class="hint">Try it: edit, save, deploy</span></div>
+ <div class="s-body">
+  <div class="sd">
+   <div class="sdp"><h3>Apps Script editor <span class="st saved" data-es>Saved</span></h3>
+    <div class="code">function doGet() {<br>&nbsp;&nbsp;// Submit button colour<br>&nbsp;&nbsp;const BTN = <span class="chg" data-ec>"blue"</span>;<br>}</div>
+    <p style="margin:0;font-size:15px;color:var(--muted)">Only you see this.</p>
+   </div>
+   <div class="sd-arrow"><svg width="44" height="30" viewBox="0 0 44 30"><path d="M2 15h36M30 6l9 9-9 9" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+   <div class="sdp"><h3>Live web app <span class="st live" data-lv>Version 1</span></h3>
+    <div class="minif"><i></i><i style="width:70%"></i><div class="b" data-lb style="background:#0d6efd">Submit Reservation</div></div>
+    <p style="margin:0;font-size:15px;color:var(--muted)">What your colleagues see. Same link every time.</p>
+   </div>
+  </div>
+  <div class="sd-ctl"><button class="sbtn" data-act="edit">1. Edit the code</button><button class="sbtn" data-act="save">2. Save (Ctrl+S)</button><button class="sbtn solid" data-act="deploy">3. Deploy › Manage deployments › New version</button><button class="sbtn" data-act="sdreset" style="margin-left:auto">Reset</button></div>
+  <div class="sd-msg" data-sdm>Click "Edit the code" to change the button colour.</div>
+ </div>
+ <aside class="notes">The number one confusion in every Apps Script workshop: "I fixed it but nothing changed!" Let a participant drive this. Edit: only the editor changes. Save: still only the editor. Deploy with a new version: now the live app changes, and the link stays the same. Also remind them to keep a backup of working code in a Google Doc before big changes.</aside>
+</section>
+
+<section class="slide" data-id="safety">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 4: Survival skills</p><h2 class="s-title">Deploying at UniMAP, safely</h2></div></div>
+ <div class="s-body sf">
+  <div>
+   <div class="dep"><div class="h">New deployment</div>
+    <div class="b">
+     <div class="fld"><small>Description</small>eBooking v1.0</div>
+     <div class="fld"><small>Execute as</small>Me (yourname@unimap.edu.my)</div>
+     <div class="fld hl"><small>Who has access</small>Anyone within Universiti Malaysia Perlis</div>
+    </div>
+    <div class="ft"><span style="color:#1a73e8">Cancel</span><span style="background:#1a73e8;color:#fff">Deploy</span></div>
+   </div>
+   <p class="sf-note"><b>Why this option?</b> UniMAP's Google Workspace doesn't allow fully public apps, so choose "Anyone within Universiti Malaysia Perlis". Users sign in with their UniMAP account.</p>
+  </div>
+  <div class="sf-pts">
+   <div class="sf-pt"><span class="ic" style="background:var(--blue)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><div><b>Keep sensitive data out</b><span>No IC numbers, grades or medical information.</span></div></div>
+   <div class="sf-pt"><span class="ic" style="background:#c07a00"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></svg></span><div><b>"Unverified" is expected</b><span>Google hasn't reviewed your personal script. Authorise your own code, never a stranger's.</span></div></div>
+   <div class="sf-pt"><span class="ic" style="background:var(--green)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M7.5 12.5l3 3 6-6"/><circle cx="12" cy="12" r="10"/></svg></span><div><b>You own what you deploy</b><span>AI wrote it, you published it. Review before sharing widely.</span></div></div>
+  </div>
+ </div>
+ <aside class="notes">This is the dialog you'll see at 10:45. Execute as: Me, so the app uses your permission to write to your Sheet. Who has access: Anyone within Universiti Malaysia Perlis. UniMAP's Workspace settings don't allow a fully public app, so this is the option to choose. When you first authorise, Google shows "Unverified" because it's your own personal script, not a reviewed product. That's expected for your own code. Never authorise scripts from strangers.</aside>
+</section>
+
+<section class="slide" data-id="glossary">
+ <div class="s-head"><div><p class="s-sec"><i></i>Part 4: Survival skills</p><h2 class="s-title">Words you'll hear today</h2></div><span class="hint">Click a word to reveal its meaning</span></div>
+ <div class="s-body gls">
+  <button class="gcard"><b>Frontend</b><span>The part users see and click (Index.html)</span><small>Reveal</small></button>
+  <button class="gcard"><b>Backend</b><span>The logic running on Google's server (Code.gs)</span><small>Reveal</small></button>
+  <button class="gcard"><b>Database</b><span>Where the data is stored (our Google Sheet)</span><small>Reveal</small></button>
+  <button class="gcard"><b>Deploy</b><span>Publish your code so others can use it</span><small>Reveal</small></button>
+  <button class="gcard"><b>Web app URL</b><span>The link you share with users. It ends in /exec</span><small>Reveal</small></button>
+  <button class="gcard"><b>Sheet ID</b><span>The code in your Sheet's link, between /d/ and /edit</span><small>Reveal</small></button>
+  <button class="gcard"><b>Bootstrap</b><span>A free style kit that makes pages look professional</span><small>Reveal</small></button>
+  <button class="gcard"><b>Version</b><span>A numbered snapshot of your deployed code</span><small>Reveal</small></button>
+  <button class="gcard"><b>Bug</b><span>Anything that doesn't work as expected</span><small>Reveal</small></button>
+ </div>
+ <aside class="notes">Quick-fire: point at a word, ask someone to explain it, then click to reveal. Sheet ID matters most: you'll need it in a few minutes. The same glossary is on the Help page.</aside>
+</section>
+
+<section class="slide amber" data-id="closing">
+ <div class="close">
+  <div>
+   <p class="s-sec" style="color:var(--ink)"><i style="background:var(--ink)"></i>Next: hands-on, 10:00 AM</p>
+   <h1>Let's build.</h1>
+   <p class="s1">Step 1: open a new Google Sheet. Type this in your browser:</p>
+   <span class="url">sheets.new</span>
+   <p class="s2">Signed in with your UniMAP account. Then open Gemini in a second tab and follow the Hands-on guide.</p>
+  </div>
+  <div class="qr"><img src="assets/img/qr.svg" alt="QR code for the workshop website"><b>Open the hands-on guide</b><span>zamrizahir88.github.io/aiworkshop2026</span></div>
+ </div>
+ <aside class="notes">Transition to hands-on. Everyone scans the QR code and opens the Hands-on guide. Check that everyone is signed in with their UniMAP account, not a personal Gmail. Multiple signed-in accounts in one browser can cause errors with Apps Script later, so a separate browser profile or incognito window helps.</aside>
+</section>
+</div>
+<div class="notes-panel" id="notes" aria-live="polite"><h4>Speaker notes</h4><div id="notes-body"></div></div>
+<div class="keyhelp"><b>Keyboard</b><br>→ or Space: next<br>←: back<br>F: fullscreen<br>N: speaker notes<br>Home / End: first / last</div>
+</main>
+<div class="deck-bar">
+ <button data-b="prev" aria-label="Previous"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
+ <span class="count">1 / 1</span>
+ <button data-b="next" aria-label="Next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
+ <div class="pbar"><i></i></div>
+ <button data-b="notes" class="opt" aria-pressed="false">Notes</button>
+ <button data-b="keys" class="opt" aria-label="Keyboard shortcuts">?</button>
+ <button data-b="fs" aria-pressed="false">Fullscreen</button>
+ <span class="credit">&copy; 2026 <a href="https://zamrizahir88.github.io/cv/main.html" target="_blank" rel="noopener">Ts. Dr. Mohd Zamri Bin Zahir Ahmad</a></span>
+</div>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/demo.js"></script>
+<script src="assets/js/slides.js"></script>
+</body></html>

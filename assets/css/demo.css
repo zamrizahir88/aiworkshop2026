@@ -1,0 +1,71 @@
+/* eBooking demo — recreation of the FKTEN eBooking Room System */
+.bdemo-scale{position:relative;width:100%}
+.bdemo{position:absolute;left:0;top:0;width:1180px;height:600px;transform-origin:0 0;display:flex;gap:22px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#212529;font-size:15px;line-height:1.4}
+.bd-win{background:#fff;border-radius:14px;box-shadow:0 18px 50px rgba(0,0,0,.28);overflow:hidden;display:flex;flex-direction:column}
+.bd-app{width:770px}
+.bd-sheet{flex:1}
+.bd-bar{height:40px;background:#e9edf2;display:flex;align-items:center;gap:8px;padding:0 14px;flex:none}
+.bd-bar i{width:11px;height:11px;border-radius:50%;display:block}
+.bd-url{margin-left:10px;flex:1;background:#fff;border-radius:6px;height:24px;font-size:12.5px;color:#5f6b7a;display:flex;align-items:center;padding:0 10px;white-space:nowrap;overflow:hidden}
+.bd-body{padding:16px 22px;position:relative;flex:1;overflow:hidden}
+.bd-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.bd-title{color:#0d6efd;font-size:22px;font-weight:600}
+.bd-badge{background:#6c757d;color:#fff;font-size:11.5px;font-weight:700;padding:4px 8px;border-radius:5px}
+.bd-tabs{display:flex;gap:4px;border-bottom:1px solid #dee2e6;margin-bottom:12px}
+.bd-tab{padding:6px 12px;font-size:13.5px;font-weight:600;border:1px solid transparent;border-bottom:0;border-radius:6px 6px 0 0;color:#0d6efd}
+.bd-tab.adm{color:#dc3545}
+.bd-tab.on{border-color:#dee2e6;background:#fff;color:#212529;margin-bottom:-1px}
+.bd-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px 14px}
+.bd-f{grid-column:span 3}
+.bd-f.t{grid-column:span 2}
+.bd-f.w{grid-column:span 6}
+.bd-f label{display:block;font-weight:700;font-size:12.5px;margin-bottom:3px}
+.bd-in{height:31px;border:1px solid #ced4da;border-radius:6px;padding:5px 10px;font-size:13.5px;white-space:nowrap;overflow:hidden;background:#fff;transition:border-color .2s,box-shadow .2s}
+.bd-in.ro{background:#e9ecef}
+.bd-in.ph{color:#8a939c}
+.bd-in.foc{border-color:#86b7fe;box-shadow:0 0 0 3px rgba(13,110,253,.22)}
+.bd-in.sel:after{content:"⌄";float:right;color:#555}
+.bd-btn{margin-top:10px;height:36px;border-radius:6px;background:#0d6efd;color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;font-size:15px;transition:background .2s,transform .12s}
+.bd-btn.busy{background:#6ea8fe}
+.bd-btn.press{transform:scale(.97)}
+.bd-spin{width:15px;height:15px;border:2.5px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;animation:bdspin .7s linear infinite;display:none}
+.bd-btn.busy .bd-spin{display:block}
+@keyframes bdspin{to{transform:rotate(360deg)}}
+.bd-h5{font-size:16.5px;font-weight:500;margin:12px 0 6px;padding-top:10px;border-top:1px solid #dee2e6}
+.bd-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.bd-table th{background:#212529;color:#fff;text-align:left;padding:6px 8px;font-weight:700}
+.bd-table td{padding:5px 8px;border-bottom:1px solid #dee2e6}
+.bd-table tr:nth-child(odd) td{background:#f5f5f5}
+.bd-pill{font-size:11px;font-weight:700;padding:2px 7px;border-radius:5px;display:inline-block}
+.bd-pill.p{background:#ffc107;color:#212529}
+.bd-pill.a{background:#198754;color:#fff}
+.bd-new td{animation:bdflash 1.6s ease}
+@keyframes bdflash{0%{background:#fff3cd}100%{}}
+.bd-view{display:none}
+.bd-view.on{display:block}
+.bd-alertbox{background:#f8d7da;color:#842029;border:1px solid #f5c2c7;border-radius:6px;padding:8px 12px;font-size:13px;margin-bottom:10px}
+.bd-adm th{background:#f8d7da;color:#58151c}
+.bd-adm td{vertical-align:top;padding:8px}
+.bd-adm .rm{height:26px;border:1px solid #ced4da;border-radius:5px;font-size:12px;padding:4px 8px;margin-bottom:5px;white-space:nowrap;overflow:hidden}
+.bd-adm .ok{height:26px;border-radius:5px;background:#198754;color:#fff;font-size:12.5px;display:flex;align-items:center;justify-content:center;margin-bottom:5px}
+.bd-adm .ok.busy{background:#75b798}
+.bd-adm .no{height:24px;border-radius:5px;border:1px solid #dc3545;color:#dc3545;font-size:12px;display:flex;align-items:center;justify-content:center}
+.bd-empty{color:#6c757d;text-align:center;padding:30px 0;font-size:13.5px}
+.bd-dialog{position:absolute;top:14px;left:50%;transform:translateX(-50%) translateY(-10px);width:380px;background:#202124;color:#e8eaed;border-radius:12px;padding:16px 18px 14px;font-size:13px;box-shadow:0 12px 40px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:5}
+.bd-dialog.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.bd-dialog b{display:block;font-size:13.5px;margin-bottom:6px}
+.bd-dialog .okb{margin:12px 0 0 auto;width:62px;height:30px;border-radius:15px;background:#8ab4f8;color:#202124;font-weight:700;display:flex;align-items:center;justify-content:center}
+.bd-cursor{position:absolute;left:0;top:0;width:22px;height:22px;z-index:20;transition:transform .7s cubic-bezier(.45,.05,.25,1);pointer-events:none;filter:drop-shadow(0 2px 3px rgba(0,0,0,.35))}
+.bd-cursor.click:after{content:"";position:absolute;left:-10px;top:-10px;width:24px;height:24px;border-radius:50%;background:rgba(242,169,0,.55);animation:bdclick .45s ease-out}
+@keyframes bdclick{from{transform:scale(.3);opacity:1}to{transform:scale(1.6);opacity:0}}
+/* sheet */
+.bd-sbar{background:#188038;color:#fff;font-weight:600;font-size:13.5px;height:40px;display:flex;align-items:center;gap:10px;padding:0 14px;flex:none}
+.bd-sbar svg{flex:none}
+.bd-sgrid{border-collapse:collapse;width:100%;font-size:12.5px;table-layout:fixed}
+.bd-sgrid th{background:#f1f3f4;color:#5f6368;font-weight:500;font-size:11.5px;border:1px solid #e0e0e0;height:22px}
+.bd-sgrid td{border:1px solid #e0e0e0;padding:4px 6px;height:30px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bd-sgrid td.rn{background:#f1f3f4;color:#5f6368;text-align:center;font-size:11.5px;width:30px}
+.bd-sgrid tr.hdr td:not(.rn){font-weight:700;background:#fafafa}
+.bd-sgrid td.flash{animation:bdcell 1.8s ease}
+@keyframes bdcell{0%{background:#c8e6c9;box-shadow:inset 0 0 0 2px #188038}100%{}}
+.bd-sfoot{padding:12px 14px;font-size:12.5px;color:#5f6368;border-top:1px solid #e0e0e0;margin-top:auto}

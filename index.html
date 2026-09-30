@@ -1,0 +1,94 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23f2a900'/><text x='16' y='22' font-family='monospace' font-weight='700' font-size='15' text-anchor='middle' fill='%230f2742'>AI</text></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>AI-Assisted Web System Development 2026 | FKTEN UniMAP</title>
+<meta name="description" content="Hands-on workshop: build the FKTEN eBooking Room System with Google Apps Script, Google Sheets and Gemini.">
+<link rel="stylesheet" href="assets/css/demo.css">
+</head><body>
+<header class="topbar"><div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark">AI</span><span><span class="full">AI-Assisted Web System Development </span>2026</span></a>
+<nav class="nav" aria-label="Main">
+<a href="index.html" aria-current="page">Home</a>
+<a href="slides.html">Slides</a>
+<a href="guide.html">Hands-on guide</a>
+<a href="help.html">Help</a>
+</nav></div></header>
+<main>
+<section class="hero blueprint">
+ <div class="wrap hero-grid">
+  <div>
+   <h1>AI-Assisted Web System Development</h1>
+   <p class="lead">Build a working room booking system in one morning, with Gemini writing the code and you directing it.</p>
+   <div class="facts">
+    <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Thursday, 1 October 2026, 9:30 AM to 12:30 PM</span></div>
+    <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>VIBE Room, FKTEN, UniMAP</span></div>
+    <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 17l.8 2.2L22 20l-2.2.8L19 23l-.8-2.2L16 20l2.2-.8z"/></svg><span>Google Apps Script, Google Sheets and Gemini 3.1 Pro</span></div>
+   </div>
+   <div class="actions">
+    <a class="btn btn-amber" href="guide.html">Start the hands-on guide</a>
+    <a class="btn btn-ghost" href="slides.html">View the slides</a>
+   </div>
+   <div class="presenter">
+    <a class="presenter-photo" href="https://zamrizahir88.github.io/cv/main.html" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="assets/img/presenter.jpg" alt="" width="400" height="400" decoding="async"></a>
+    <div class="presenter-text"><span class="presenter-label">Your facilitator</span><strong><a href="https://zamrizahir88.github.io/cv/main.html" target="_blank" rel="noopener">Ts. Dr. Mohd Zamri Bin Zahir Ahmad</a></strong>Senior Lecturer, FKTEN, UniMAP</div>
+   </div>
+  </div>
+  <div class="demo-frame">
+   <div id="demo" role="img" aria-label="Animation: a lecturer books Bilik Diskusi, the booking appears as Pending in the schedule and Google Sheet, then an admin approves it and the status changes to Approved."></div>
+   <div class="demo-caption" id="demo-cap"><span>1. Lecturer books a room</span><span>2. Saved as Pending</span><span>3. Admin approves</span><span>4. Updated everywhere</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="routes"><div class="wrap">
+ <h2>Three things you'll use today</h2>
+ <p>Everything for the workshop lives on this one site. Bookmark it: it stays online after today.</p>
+ <div class="route-track">
+  <a class="route" href="slides.html">
+   <div class="ico" style="background:var(--blue-soft);color:var(--blue)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+   <span class="when">9:30 AM, on the big screen</span><h3>Slides</h3>
+   <p>How web systems work and how to write prompts that get good code.</p>
+   <span class="go">Open slides</span>
+  </a>
+  <a class="route" href="guide.html">
+   <div class="ico" style="background:var(--amber-soft);color:var(--amber-ink)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+   <span class="when">10:00 AM, on your laptop</span><h3>Hands-on guide</h3>
+   <p>12 steps with copy-ready prompts, screenshots and a progress tracker.</p>
+   <span class="go">Start building</span>
+  </a>
+  <a class="route" href="help.html">
+   <div class="ico" style="background:var(--green-soft);color:var(--green)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5v.5"/></svg></div>
+   <span class="when">Whenever you're stuck</span><h3>Help</h3>
+   <p>Fixes for common errors, a fix-it prompt and a glossary of terms.</p>
+   <span class="go">Get unstuck</span>
+  </a>
+ </div>
+</div></section>
+
+<section class="schedule"><div class="wrap">
+ <h2>The morning at a glance</h2>
+ <p>Half an hour of ideas, then two and a half hours of building.</p>
+ <div class="tl">
+  <div class="tl-item now"><time>9:30</time><h3>Intro and prompting</h3><p>How web systems work and how to talk to AI</p></div>
+  <div class="tl-item"><time>10:00</time><h3>Setup and first build</h3><p>Design the data, generate the code</p></div>
+  <div class="tl-item"><time>10:45</time><h3>Deploy and test</h3><p>Go live and submit your first booking</p></div>
+  <div class="tl-item"><time>11:15</time><h3>Iterate</h3><p>Add admin roles and approvals</p></div>
+  <div class="tl-item"><time>12:00</time><h3>Fix, Q&amp;A, wrap-up</h3><p>Catch up and plan your own system</p></div>
+ </div>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap"><div>&copy; 2026 <a href="https://zamrizahir88.github.io/cv/main.html" target="_blank" rel="noopener">Ts. Dr. Mohd Zamri Bin Zahir Ahmad</a>. All rights reserved.</div><div class="who">Senior Lecturer, Faculty of Engineering Technology (FKTEN), Universiti Malaysia Perlis</div></div></footer>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/demo.js"></script>
+<script>
+(function(){
+ const caps=[...document.querySelectorAll('#demo-cap span')];
+ const d=mountBookingDemo(document.getElementById('demo'),{onStage:i=>caps.forEach((c,k)=>c.classList.toggle('on',k===i))});
+ if(!matchMedia('(prefers-reduced-motion: reduce)').matches) d.start(); else caps[0].classList.add('on');
+})();
+</script>
+</body></html>

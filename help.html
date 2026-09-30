@@ -1,0 +1,85 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23f2a900'/><text x='16' y='22' font-family='monospace' font-weight='700' font-size='15' text-anchor='middle' fill='%230f2742'>AI</text></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Help | AI-Assisted Web System Development 2026</title></head><body>
+<header class="topbar"><div class="wrap">
+<a class="brand" href="index.html"><span class="brand-mark">AI</span><span><span class="full">AI-Assisted Web System Development </span>2026</span></a>
+<nav class="nav" aria-label="Main">
+<a href="index.html">Home</a>
+<a href="slides.html">Slides</a>
+<a href="guide.html">Hands-on guide</a>
+<a href="help.html" aria-current="page">Help</a>
+</nav></div></header>
+<main>
+<section class="pagehead blueprint"><div class="wrap"><h1>Help</h1><p>Fixes for the problems people usually hit, a prompt to get unstuck, and the words you'll hear today.</p></div></section>
+<div class="wrap help-grid">
+
+<section class="help-sec" id="fixit">
+ <h2>The fix-it prompt</h2>
+ <p>When anything breaks, fill in the blanks and send this to Gemini in the same chat.</p>
+<div class="prompt" id="fix"><button class="copy" data-copy="fix">Copy prompt</button>I got this error:
+[paste the exact error message here]
+
+I expected: [what should happen]
+But instead: [what actually happened]
+
+Please explain the cause in simple terms, fix it, and give me the FULL updated Code.gs and Index.html. Don't provide patches.</div>
+ <div class="note note-tip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg><p>Errors show up on the web page, in the Apps Script editor, or under <strong>Executions</strong> in the Apps Script left sidebar. If Gemini goes in circles after 3 or 4 tries, start a new chat and paste your latest full Code.gs and Index.html with the problem.</p></div>
+</section>
+
+<section class="help-sec faq" id="errors">
+ <h2>Common errors and fixes</h2>
+ <p>Click a problem to see the likely cause and fix.</p>
+ <details><summary><span class="sym">null</span>"Cannot read properties of null (reading 'appendRow')" or similar</summary><div class="ans"><p><strong>Cause:</strong> the script can't find your sheet tab.</p><p><strong>Fix:</strong> check that the Sheet ID in Code.gs is correct, and that the sheet name matches your tab name exactly, including capital letters and spaces (for example <code>Sheet1</code>). Use the <a href="guide.html#step-5">Sheet ID helper</a>. Save, then deploy a new version.</p></div></details>
+ <details><summary><span class="sym">no change</span>I fixed the code, but the web app looks the same</summary><div class="ans"><p><strong>Cause:</strong> saving only updates the editor.</p><p><strong>Fix:</strong> Deploy › Manage deployments › pencil › Version: New version › Deploy. Then refresh the web app page. See <a href="guide.html#step-10">Step 10</a>.</p></div></details>
+ <details><summary><span class="sym">loading</span>The bookings table is stuck on "Loading…" or shows nothing</summary><div class="ans"><p><strong>Likely cause:</strong> the code sends date or time values from the Sheet straight to the page. Apps Script can't pass those Date objects to the browser, so the result arrives empty.</p><p><strong>Fix:</strong> tell Gemini: "The bookings table stays empty. Please convert all dates and times to text before returning them to the page." Ask for the full updated code.</p></div></details>
+ <details><summary><span class="sym">permission</span>"You do not have permission" or "Authorisation is required"</summary><div class="ans"><p><strong>Cause:</strong> the script needs permission again, often after new features are added, such as sending emails.</p><p><strong>Fix:</strong> deploy a new version and open the link again. When Google asks, review permissions and allow access with your UniMAP account.</p></div></details>
+ <details><summary><span class="sym">accounts</span>Errors appear only in my browser, or the wrong account is used</summary><div class="ans"><p><strong>Cause:</strong> several Google accounts are signed in to the same browser. Apps Script web apps don't handle this well.</p><p><strong>Fix:</strong> open the web app in an incognito window, or a separate browser profile, signed in with your UniMAP account only.</p></div></details>
+ <details><summary><span class="sym">not found</span>"Script function not found: doGet" or a blank page</summary><div class="ans"><p><strong>Cause:</strong> Code.gs wasn't saved, doGet is missing, or the HTML file name doesn't match.</p><p><strong>Fix:</strong> make sure your HTML file is named exactly <code>Index</code>, matching the name used in doGet. Save both files, then deploy a new version.</p></div></details>
+ <details><summary><span class="sym">admin</span>The Admin Dashboard tab doesn't appear for me</summary><div class="ans"><p><strong>Cause:</strong> your email isn't in the admin list exactly as the script expects, or the old version is still live.</p><p><strong>Fix:</strong> check the admin list in your Sheet: the email must be exact, lowercase, with no extra spaces. Then deploy a new version and reload.</p></div></details>
+ <details><summary><span class="sym">access</span>A colleague can't open my web app link</summary><div class="ans"><p><strong>Cause:</strong> the access setting, or they're signed in with a non-UniMAP account.</p><p><strong>Fix:</strong> in your deployment, "Who has access" must be <strong>Anyone within Universiti Malaysia Perlis</strong>. Your colleague must sign in with their UniMAP account.</p></div></details>
+ <details><summary><span class="sym">patches</span>Gemini gives me only part of the code ("replace lines 40 to 55…")</summary><div class="ans"><p><strong>Fix:</strong> reply: "Please give me the full updated Code.gs and Index.html. Don't provide patches." Then select all, delete and paste the complete files.</p></div></details>
+ <details><summary><span class="sym">cut off</span>Gemini's answer stops halfway through the code</summary><div class="ans"><p><strong>Fix:</strong> reply "Continue exactly where you stopped." Or ask for one file at a time: "Give me only the full Code.gs first."</p></div></details>
+</section>
+
+<section class="help-sec" id="glossary">
+ <h2>Glossary</h2>
+ <p>Click a word to see what it means.</p>
+ <input class="gl-search" id="glq" type="search" placeholder="Search a term, e.g. deploy" aria-label="Search the glossary">
+ <div class="gl" id="gl"></div>
+</section>
+
+<section class="help-sec" id="next">
+ <h2>What's next: your own system</h2>
+ <p>The same prompt chain works for other faculty processes. For example, a <strong>Title Proposal Vetting System</strong>: students submit FYP titles, lecturers review them, and a coordinator approves. Start with a Prompt 1 like this, then follow the same 12 steps.</p>
+<div class="prompt" id="tpv"><button class="copy" data-copy="tpv">Copy prompt</button>Act as a Senior Web Systems Analyst. I want to build a simple Title Proposal Vetting System for the Faculty of Engineering Tech (FKTEN) using Google Apps Script and Google Sheets.
+
+Final-year students submit project title proposals. Supervisors review them, and the FYP coordinator makes the final decision.
+
+Based on this, please suggest:
+- 5 essential features for a simple, user-friendly web app.
+- What exact data fields we should store in Google Sheets for each proposal.
+- A logical workflow for the proposal status (e.g., Submitted, Reviewed, Approved, Needs Revision) between students, supervisors and the coordinator.
+
+Keep your suggestions simple, practical, and non-technical. Do not write the code yet; just outline the system design.</div>
+</section>
+</div>
+</main>
+<footer class="footer"><div class="wrap"><div>&copy; 2026 <a href="https://zamrizahir88.github.io/cv/main.html" target="_blank" rel="noopener">Ts. Dr. Mohd Zamri Bin Zahir Ahmad</a>. All rights reserved.</div><div class="who">Senior Lecturer, Faculty of Engineering Technology (FKTEN), Universiti Malaysia Perlis</div></div></footer>
+<script src="assets/js/common.js"></script>
+<script>
+(function(){
+const G=[['Frontend','The part users see and click. In our system: Index.html.'],['Backend','The logic that runs on Google\'s server. In our system: Code.gs.'],['Database','Where the data is stored. In our system: the Google Sheet.'],['Google Apps Script','Google\'s free coding platform built into Google Workspace. Open it from a Sheet via Extensions › Apps Script.'],['Deploy','Publish your code as a web app so others can use it.'],['Web app URL','The link you share with users. It ends in /exec and stays the same across versions.'],['Version','A numbered snapshot of your deployed code. Create a new one every time you change the code.'],['Sheet ID','The long code in your Sheet\'s link, between /d/ and /edit. It tells the script which Sheet to use.'],['Sheet name','The name of the tab at the bottom of your Sheet, such as Sheet1. It must match the code exactly.'],['Bootstrap','A free style kit that makes web pages look professional and work on phones.'],['Prompt','The instruction you give the AI. Good prompts have a Role, Context, Task and Constraints.'],['Patch','A partial code change. Beginners should ask for the full code instead.'],['doGet','The function in Code.gs that runs when someone opens your web app link.'],['google.script.run','The bridge that lets the web page call functions in Code.gs.'],['Scriptlet','Code between <? and ?> in Index.html that runs on the server. Used to hide the admin page from normal users.'],['Authorise','Giving your script permission to use your Google data, such as your Sheet.'],['Bug','Anything that doesn\'t work as expected.'],['CRUD','Create, Read, Update, Delete: the four things a web system does with data.']];
+const box=document.getElementById('gl'),q=document.getElementById('glq');
+function render(){const f=q.value.trim().toLowerCase();box.innerHTML='';
+ const list=G.filter(g=>!f||g[0].toLowerCase().includes(f)||g[1].toLowerCase().includes(f));
+ if(!list.length){box.innerHTML='<p style="color:var(--muted)">No match. Try another word, or ask Gemini: "Explain [term] in simple English."</p>';return}
+ list.forEach(g=>{const b=document.createElement('button');b.className='gl-card';b.setAttribute('aria-expanded',f?'true':'false');b.innerHTML='<b></b><span class="def"></span><span class="hint">Show meaning</span>';b.querySelector('b').textContent=g[0];b.querySelector('.def').textContent=g[1];b.onclick=()=>b.setAttribute('aria-expanded',b.getAttribute('aria-expanded')==='true'?'false':'true');box.appendChild(b)})}
+q.addEventListener('input',render);render();
+})();
+</script>
+</body></html>
